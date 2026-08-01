@@ -5,9 +5,9 @@
     --canvas-line: #E4DCC8;
     --app-bg: #FFFDF8;
     --app-bg-raised: #FFFFFF;
-    --yellow-500: #F8CB46;
-    --yellow-600: #E9B627;
-    --yellow-100: #FCF0CE;
+    --yellow-500: #FFC629;
+    --yellow-600: #F0A800;
+    --yellow-100: #FFF3D0;
     --ink-900: #18161A;
     --ink-700: #3A3733;
     --ink-500: #6E6A62;
@@ -278,6 +278,104 @@
   .cta-btn .icon { width: 13px; height: 13px; color: #fff; }
   .sticky-cta .foot-note { text-align: center; font-size: 9px; color: var(--ink-300); margin-top: 6px; }
 
+  /* ---------- live-app-accurate home components (added after screenshot audit) ---------- */
+  .hero {
+    background:
+      radial-gradient(rgba(20,18,10,.09) 1px, transparent 1.6px) 0 0/14px 14px,
+      linear-gradient(165deg, var(--yellow-500), var(--yellow-600));
+    padding-bottom: 8px; flex-shrink: 0;
+  }
+  .addr-row { display: flex; align-items: flex-start; justify-content: space-between; padding: 12px 16px 0; }
+  .addr-text .tag { font-size: 10.5px; font-weight: 800; letter-spacing: 0.02em; color: var(--ink-900); }
+  .addr-text .status { font-size: 18px; font-weight: 800; line-height: 1.15; margin: 2px 0 4px; letter-spacing: -0.01em; }
+  .addr-text .loc { display: flex; align-items: center; gap: 4px; }
+  .addr-text .loc span { font-size: 11.5px; font-weight: 800; letter-spacing: 0.01em; }
+  .addr-text .loc .chev { width: 11px; height: 11px; color: var(--ink-900); }
+  .head-icons { display: flex; align-items: center; gap: 8px; flex-shrink: 0; margin-top: 2px; }
+  .wallet-pill { display: flex; flex-direction: column; align-items: center; }
+  .wallet-pill .circle {
+    width: 30px; height: 30px; border-radius: 50%; background: #fff;
+    display: flex; align-items: center; justify-content: center; box-shadow: 0 1px 2px rgba(20,18,10,.14);
+  }
+  .wallet-pill .circle .icon { width: 14px; height: 14px; color: var(--green-600); }
+  .wallet-pill .amt {
+    font-size: 8.5px; font-weight: 800; background: var(--ink-900); color: #fff;
+    padding: 1px 6px; border-radius: 8px; margin-top: -6px; position: relative; z-index: 2;
+  }
+  .profile-circle {
+    width: 30px; height: 30px; border-radius: 50%; background: #fff;
+    display: flex; align-items: center; justify-content: center; box-shadow: 0 1px 2px rgba(20,18,10,.14);
+  }
+  .profile-circle .icon { width: 14px; height: 14px; color: var(--ink-900); }
+
+  .search-pill {
+    margin: 12px 16px 0; background: var(--yellow-100); border: none; border-radius: 100px;
+    padding: 11px 14px; display: flex; align-items: center; gap: 9px;
+  }
+  .search-pill .icon { width: 16px; height: 16px; color: var(--ink-700); flex-shrink: 0; }
+  .search-pill span.ph { flex: 1; font-size: 12px; font-weight: 700; color: var(--ink-700); }
+  .search-pill .divider { width: 1px; height: 16px; background: rgba(20,18,10,.18); flex-shrink: 0; }
+  .search-pill .mic { width: 14px; height: 14px; color: var(--ink-900); flex-shrink: 0; }
+
+  .icon-tabs { display: flex; gap: 20px; overflow-x: auto; padding: 14px 16px 2px; }
+  .icon-tab { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+  .icon-tab .ic-wrap { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 19px; position: relative; }
+  .icon-tab span { font-size: 9.5px; font-weight: 800; color: var(--ink-900); position: relative; }
+  .icon-tab.active span::after { content: ""; position: absolute; left: 0; right: 0; bottom: -5px; height: 2px; background: var(--ink-900); border-radius: 2px; }
+  .icon-tab:not(.active) span { color: rgba(20,18,10,.7); }
+  .icon-tab .badge {
+    position: absolute; top: -6px; right: -12px; background: var(--coral-500); color: #fff;
+    font-size: 6.5px; font-weight: 800; padding: 1.5px 4px; border-radius: 5px; white-space: nowrap;
+  }
+
+  .sponsor-ribbon { margin: 8px 16px 0; text-align: center; }
+  .sponsor-ribbon .lbl { font-size: 8.5px; font-weight: 800; letter-spacing: 0.18em; color: rgba(20,18,10,.55); }
+  .sponsor-ribbon .strip {
+    margin-top: 6px; height: 26px; border-radius: 13px; background: rgba(255,255,255,.55);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .sponsor-ribbon .strip span { font-size: 9px; font-weight: 800; color: var(--ink-700); letter-spacing: 0.04em; }
+
+  .merch-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-auto-rows: 74px; gap: 8px; padding: 12px 16px 0; flex-shrink: 0; }
+  .merch-tall { grid-row: span 2; background: var(--sand-100); border-radius: 14px; padding: 10px; display: flex; flex-direction: column; }
+  .merch-tall .t { font-size: 10.5px; font-weight: 800; line-height: 1.2; }
+  .merch-tall .was { font-size: 8.5px; text-decoration: line-through; color: var(--ink-300); margin-top: 6px; }
+  .merch-tall .now { display: inline-block; font-size: 10.5px; font-weight: 800; background: var(--ink-900); color: #fff; padding: 2px 6px; border-radius: 6px; margin-top: 2px; width: fit-content; }
+  .merch-tall .art { margin-top: auto; font-size: 20px; align-self: flex-end; }
+  .merch-card { grid-column: span 2; background: var(--sand-100); border-radius: 14px; padding: 9px 10px; position: relative; overflow: hidden; }
+  .merch-card .t { font-size: 10px; font-weight: 800; line-height: 1.2; max-width: 68%; }
+  .merch-card .art { position: absolute; right: 8px; bottom: 6px; font-size: 24px; }
+  .merch-card .date { font-size: 8px; font-weight: 700; color: var(--ink-500); margin-top: 3px; }
+
+  .store-banner {
+    margin: 10px 16px 0; background: linear-gradient(120deg, #1B2A55, #101A38); border-radius: 13px;
+    padding: 12px 14px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
+  }
+  .store-banner .t strong { display: block; font-size: 11px; font-weight: 800; color: #F4D06F; }
+  .store-banner .t span { font-size: 9px; color: #C9CEE0; }
+  .store-banner .icon { width: 13px; height: 13px; color: #F4D06F; flex-shrink: 0; }
+
+  .freq-row { display: flex; gap: 14px; padding: 0 16px; }
+  .coll-card { flex: 1; }
+  .coll-thumbs { position: relative; height: 60px; }
+  .coll-thumbs .thumb { position: absolute; width: 50px; height: 50px; border-radius: 12px; border: 2px solid var(--app-bg); box-shadow: 0 2px 6px rgba(20,18,10,.1); }
+  .coll-thumbs .thumb:nth-child(1) { left: 0; top: 6px; z-index: 3; }
+  .coll-thumbs .thumb:nth-child(2) { left: 28px; top: 0; z-index: 2; }
+  .coll-thumbs .thumb:nth-child(3) { left: 56px; top: 6px; z-index: 1; }
+  .coll-thumbs .more { position: absolute; left: 88px; top: 16px; font-size: 9.5px; font-weight: 800; color: var(--ink-500); background: var(--sand-100); padding: 3px 7px; border-radius: 8px; z-index: 4; white-space: nowrap; }
+  .coll-card .lbl { margin-top: 8px; font-size: 11px; font-weight: 800; text-align: center; }
+
+  .tabbar-wrap { display: flex; align-items: center; gap: 8px; padding: 8px 10px 12px; border-top: 1px solid var(--sand-300); background: var(--app-bg-raised); flex-shrink: 0; }
+  .tabbar-wrap .tabbar { flex: 1; border: none; padding: 0; margin: 0; background: transparent; }
+  .partner-fab {
+    width: 34px; height: 34px; border-radius: 50%; background: #7C3AED; flex-shrink: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  .partner-fab span { color: #fff; font-size: 5.5px; font-weight: 800; line-height: 1.15; text-align: center; }
+
+  .g4 { font-size: 9.5px; font-weight: 800; }
+  .battery-pill { background: var(--coral-500); color: #fff; font-size: 9px; font-weight: 800; padding: 1.5px 6px; border-radius: 8px; font-variant-numeric: tabular-nums; }
+
   /* ---------- diff section ---------- */
   .diff { max-width: 980px; }
   .diff-head { max-width: 640px; margin-bottom: 28px; }
@@ -329,13 +427,14 @@
     <p class="dek">
       Four screens showing the chosen Part 4 solution end to end: a conversational, occasion-triggered
       discovery surface layered onto the existing Blinkit home — never replacing it, only appearing
-      when a user actually asks for it.
+      when a user actually asks for it. Screens 01–02 are redrawn against a live screenshot audit of
+      the production app, not inferred from reviews.
     </p>
     <div class="meta">
       <div class="meta-item"><strong>Hypotheses covered</strong>H1 · H2 · H3</div>
       <div class="meta-item"><strong>Primary segment</strong>Trust-Ready Explorers</div>
       <div class="meta-item"><strong>Screens</strong>Baseline → Entry → Conversation → Result</div>
-      <div class="meta-item"><strong>Source</strong>docs/part3, docs/part4-mvp-proposal.md</div>
+      <div class="meta-item"><strong>Live audit</strong>Production screenshot, 2026-08-01</div>
     </div>
   </header>
 
@@ -347,67 +446,95 @@
         <div class="notch"></div>
         <div class="screen">
           <div class="statusbar">
-            <span>9:41</span>
+            <span>2:51</span>
             <span class="icons">
               <svg class="icon filled" viewBox="0 0 20 12"><rect x="0" y="7" width="3" height="5" rx="0.5"></rect><rect x="5" y="4" width="3" height="8" rx="0.5"></rect><rect x="10" y="1" width="3" height="11" rx="0.5"></rect><rect x="15" y="0" width="4" height="12" rx="1"></rect></svg>
+              <span class="g4">4G</span>
+              <span class="battery-pill">8</span>
             </span>
           </div>
-          <div class="topbar">
-            <div class="topbar-row">
-              <div>
-                <div class="loc-row">
-                  <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22Z"></path><circle cx="12" cy="9.5" r="2.4"></circle></svg>
-                  <span class="loc-eta">Delivery in 8 mins</span>
-                </div>
-                <div class="loc-sub"><span class="loc-addr">Home · HSR Layout, Bengaluru</span></div>
+          <div class="hero">
+            <div class="addr-row">
+              <div class="addr-text">
+                <div class="tag">Due to excess demand</div>
+                <div class="status">Delivery in 8 mins</div>
+                <div class="loc"><span>HOME - B-905, 9th Floor, Tower B</span><svg class="icon chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
               </div>
-              <div class="avatar">A</div>
+              <div class="head-icons">
+                <div class="wallet-pill"><div class="circle"><svg class="icon" viewBox="0 0 24 24"><path d="M3 8h14a4 4 0 0 1 4 4 4 4 0 0 1-4 4H3z"></path><circle cx="15" cy="12" r="1.6"></circle></svg></div><span class="amt">₹0</span></div>
+                <div class="profile-circle"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"></circle><path d="M4.5 21c1.5-4.5 5-6 7.5-6s6 1.5 7.5 6"></path></svg></div>
+              </div>
             </div>
-            <div class="searchbar">
+            <div class="search-pill">
               <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.6" y2="16.6"></line></svg>
-              <span>Search "milk"</span>
+              <span class="ph">Search "bouquet"</span>
+              <span class="divider"></span>
+              <svg class="icon mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0"></path><line x1="12" y1="18" x2="12" y2="22"></line></svg>
             </div>
+            <div class="icon-tabs">
+              <div class="icon-tab active"><div class="ic-wrap">🛍️</div><span>All</span></div>
+              <div class="icon-tab"><div class="ic-wrap">🪔<span class="badge">New</span></div><span>Rakhi</span></div>
+              <div class="icon-tab"><div class="ic-wrap">🎧</div><span>Electronics</span></div>
+              <div class="icon-tab"><div class="ic-wrap">💄</div><span>Beauty</span></div>
+              <div class="icon-tab"><div class="ic-wrap">💊</div><span>Pharmacy</span></div>
+              <div class="icon-tab"><div class="ic-wrap">🛋️</div><span>Decor</span></div>
+            </div>
+            <div class="sponsor-ribbon"><div class="lbl">POWERED BY</div><div class="strip"><span>SPONSORED SPOTLIGHT</span></div></div>
           </div>
           <div class="scroll-area">
-            <div class="banner"><strong>Monsoon Munchies</strong><span>Flat 20% off · same banner for everyone</span></div>
-            <div class="section-title">Categories</div>
-            <div class="cat-grid">
-              <div class="cat-item"><div class="sw" style="background:var(--green-100)">🥦</div><span>Fruits &amp; Veg</span></div>
-              <div class="cat-item"><div class="sw" style="background:var(--yellow-100)">🥛</div><span>Dairy &amp; Breakfast</span></div>
-              <div class="cat-item"><div class="sw" style="background:var(--coral-100)">🍪</div><span>Munchies</span></div>
-              <div class="cat-item"><div class="sw" style="background:var(--sand-200)">🧴</div><span>Household</span></div>
+            <div class="merch-grid">
+              <div class="merch-tall">
+                <div class="t">Bands, Cards &amp; Flowers</div>
+                <div class="was">₹199</div>
+                <div class="now">₹49</div>
+                <div class="art">🌸</div>
+              </div>
+              <div class="merch-card"><div class="t">Gifting Corner</div><div class="art">🎁</div></div>
+              <div class="merch-card"><div class="t">Party With Friends</div><div class="art">🎉</div></div>
+              <div class="merch-card"><div class="t">Chocolates &amp; Cakes</div><div class="art">🍫</div></div>
+              <div class="merch-card"><div class="t">Date Night Edit</div><div class="art">🌹</div></div>
             </div>
-            <div class="section-title">Buy it again <small>from your orders</small></div>
-            <div class="h-row">
-              <div class="product-card">
-                <div class="sw" style="background:var(--yellow-100)"></div>
-                <div class="pname">Amul Gold Milk 500ml</div>
-                <div class="prow"><span class="price">₹29</span><span class="add-btn"><svg class="icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span></div>
+            <div class="store-banner">
+              <div class="t"><strong>In-App Brand Store</strong><span>Toys, bags &amp; collectibles</span></div>
+              <svg class="icon" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </div>
+            <div class="section-title" style="margin-top:18px">Frequently bought</div>
+            <div class="freq-row">
+              <div class="coll-card">
+                <div class="coll-thumbs">
+                  <div class="thumb" style="background:var(--yellow-100)"></div>
+                  <div class="thumb" style="background:var(--green-100)"></div>
+                  <div class="thumb" style="background:var(--sand-200)"></div>
+                  <div class="more">+1 more</div>
+                </div>
+                <div class="lbl">Favourites</div>
               </div>
-              <div class="product-card">
-                <div class="sw" style="background:var(--sand-200)"></div>
-                <div class="pname">Farm Eggs, 6 pc</div>
-                <div class="prow"><span class="price">₹78</span><span class="add-btn"><svg class="icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span></div>
-              </div>
-              <div class="product-card">
-                <div class="sw" style="background:var(--yellow-100)"></div>
-                <div class="pname">Britannia Bread</div>
-                <div class="prow"><span class="price">₹45</span><span class="add-btn"><svg class="icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span></div>
+              <div class="coll-card">
+                <div class="coll-thumbs">
+                  <div class="thumb" style="background:var(--green-100)"></div>
+                  <div class="thumb" style="background:var(--yellow-100)"></div>
+                  <div class="thumb" style="background:var(--coral-100)"></div>
+                  <div class="more">+15 more</div>
+                </div>
+                <div class="lbl">Vegetables &amp; Fruits</div>
               </div>
             </div>
           </div>
-          <div class="tabbar">
-            <div class="tab active"><svg class="icon" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path></svg><span>Home</span></div>
-            <div class="tab"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg><span>Categories</span></div>
-            <div class="tab"><svg class="icon" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.4"></circle><circle cx="18" cy="20" r="1.4"></circle><path d="M2 3h2l2.6 12.4A2 2 0 0 0 8.6 17H18a2 2 0 0 0 2-1.6L21.6 7H5.2"></path></svg><span>Cart</span></div>
-            <div class="tab"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"></circle><path d="M4.5 21c1.5-4.5 5-6 7.5-6s6 1.5 7.5 6"></path></svg><span>Account</span></div>
+          <div class="tabbar-wrap">
+            <div class="tabbar">
+              <div class="tab active"><svg class="icon" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path></svg><span>Home</span></div>
+              <div class="tab"><svg class="icon" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.4"></circle><circle cx="18" cy="20" r="1.4"></circle><path d="M2 3h2l2.6 12.4A2 2 0 0 0 8.6 17H18a2 2 0 0 0 2-1.6L21.6 7H5.2"></path></svg><span>Order Again</span></div>
+              <div class="tab"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg><span>Categories</span></div>
+              <div class="tab"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9V4h12v5"></path><path d="M6 18h12v4H6z"></path><rect x="4" y="9" width="16" height="8" rx="1.5"></rect></svg><span>Print</span></div>
+            </div>
+            <div class="partner-fab"><span>district ↗</span></div>
           </div>
         </div>
       </div>
       <figcaption class="caption">
-        <span class="num">SCREEN 01 — TODAY</span>
+        <span class="num">SCREEN 01 — TODAY, LIVE-AUDITED</span>
         <h3>Baseline home</h3>
-        <p>What ships today: static banner, generic category grid, and a "Buy it again" row. Same layout regardless of what the user actually needs right now.</p>
+        <p>Matches the production app 2026-08-01: static merchandising tiles (Gifting Corner, Party With Friends, Date Night Edit), an IP store banner, and stacked-thumbnail "Frequently bought" collections — all the same for every user, no ratings or reviews shown anywhere on this screen.</p>
       </figcaption>
     </figure>
 
@@ -417,67 +544,100 @@
         <div class="notch"></div>
         <div class="screen">
           <div class="statusbar">
-            <span>9:41</span>
+            <span>2:51</span>
             <span class="icons">
               <svg class="icon filled" viewBox="0 0 20 12"><rect x="0" y="7" width="3" height="5" rx="0.5"></rect><rect x="5" y="4" width="3" height="8" rx="0.5"></rect><rect x="10" y="1" width="3" height="11" rx="0.5"></rect><rect x="15" y="0" width="4" height="12" rx="1"></rect></svg>
+              <span class="g4">4G</span>
+              <span class="battery-pill">8</span>
             </span>
           </div>
-          <div class="topbar">
-            <div class="topbar-row">
-              <div>
-                <div class="loc-row">
-                  <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22Z"></path><circle cx="12" cy="9.5" r="2.4"></circle></svg>
-                  <span class="loc-eta">Delivery in 8 mins</span>
-                </div>
-                <div class="loc-sub"><span class="loc-addr">Home · HSR Layout, Bengaluru</span></div>
+          <div class="hero">
+            <div class="addr-row">
+              <div class="addr-text">
+                <div class="tag">Due to excess demand</div>
+                <div class="status">Delivery in 8 mins</div>
+                <div class="loc"><span>HOME - B-905, 9th Floor, Tower B</span><svg class="icon chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
               </div>
-              <div class="avatar">A</div>
+              <div class="head-icons">
+                <div class="wallet-pill"><div class="circle"><svg class="icon" viewBox="0 0 24 24"><path d="M3 8h14a4 4 0 0 1 4 4 4 4 0 0 1-4 4H3z"></path><circle cx="15" cy="12" r="1.6"></circle></svg></div><span class="amt">₹0</span></div>
+                <div class="profile-circle"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"></circle><path d="M4.5 21c1.5-4.5 5-6 7.5-6s6 1.5 7.5 6"></path></svg></div>
+              </div>
             </div>
-            <div class="searchbar">
+            <div class="search-pill">
               <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.6" y2="16.6"></line></svg>
-              <span>Search "milk"</span>
+              <span class="ph">Search "bouquet"</span>
+              <span class="divider"></span>
+              <svg class="icon mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0"></path><line x1="12" y1="18" x2="12" y2="22"></line></svg>
             </div>
             <div class="prompt-card">
               <div class="bubble-ic"><svg class="icon" viewBox="0 0 24 24" style="stroke:#fff"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
               <div class="txt"><strong>Planning something?</strong><span>Tell Blinkit the occasion</span></div>
               <svg class="icon chev" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </div>
+            <div class="icon-tabs">
+              <div class="icon-tab active"><div class="ic-wrap">🛍️</div><span>All</span></div>
+              <div class="icon-tab"><div class="ic-wrap">🪔<span class="badge">New</span></div><span>Rakhi</span></div>
+              <div class="icon-tab"><div class="ic-wrap">🎧</div><span>Electronics</span></div>
+              <div class="icon-tab"><div class="ic-wrap">💄</div><span>Beauty</span></div>
+              <div class="icon-tab"><div class="ic-wrap">💊</div><span>Pharmacy</span></div>
+              <div class="icon-tab"><div class="ic-wrap">🛋️</div><span>Decor</span></div>
+            </div>
+            <div class="sponsor-ribbon"><div class="lbl">POWERED BY</div><div class="strip"><span>SPONSORED SPOTLIGHT</span></div></div>
           </div>
           <div class="scroll-area">
-            <div class="banner"><strong>Monsoon Munchies</strong><span>Flat 20% off · unchanged</span></div>
-            <div class="section-title">Categories</div>
-            <div class="cat-grid">
-              <div class="cat-item"><div class="sw" style="background:var(--green-100)">🥦</div><span>Fruits &amp; Veg</span></div>
-              <div class="cat-item"><div class="sw" style="background:var(--yellow-100)">🥛</div><span>Dairy &amp; Breakfast</span></div>
-              <div class="cat-item"><div class="sw" style="background:var(--coral-100)">🍪</div><span>Munchies</span></div>
-              <div class="cat-item"><div class="sw" style="background:var(--sand-200)">🧴</div><span>Household</span></div>
-            </div>
-            <div class="section-title">Buy it again <small>from your orders</small></div>
-            <div class="h-row">
-              <div class="product-card">
-                <div class="sw" style="background:var(--yellow-100)"></div>
-                <div class="pname">Amul Gold Milk 500ml</div>
-                <div class="prow"><span class="price">₹29</span><span class="add-btn"><svg class="icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span></div>
+            <div class="merch-grid">
+              <div class="merch-tall">
+                <div class="t">Bands, Cards &amp; Flowers</div>
+                <div class="was">₹199</div>
+                <div class="now">₹49</div>
+                <div class="art">🌸</div>
               </div>
-              <div class="product-card">
-                <div class="sw" style="background:var(--sand-200)"></div>
-                <div class="pname">Farm Eggs, 6 pc</div>
-                <div class="prow"><span class="price">₹78</span><span class="add-btn"><svg class="icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span></div>
+              <div class="merch-card"><div class="t">Gifting Corner</div><div class="art">🎁</div></div>
+              <div class="merch-card"><div class="t">Party With Friends</div><div class="art">🎉</div></div>
+              <div class="merch-card"><div class="t">Chocolates &amp; Cakes</div><div class="art">🍫</div></div>
+              <div class="merch-card"><div class="t">Date Night Edit</div><div class="art">🌹</div></div>
+            </div>
+            <div class="store-banner">
+              <div class="t"><strong>In-App Brand Store</strong><span>Toys, bags &amp; collectibles</span></div>
+              <svg class="icon" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </div>
+            <div class="section-title" style="margin-top:18px">Frequently bought</div>
+            <div class="freq-row">
+              <div class="coll-card">
+                <div class="coll-thumbs">
+                  <div class="thumb" style="background:var(--yellow-100)"></div>
+                  <div class="thumb" style="background:var(--green-100)"></div>
+                  <div class="thumb" style="background:var(--sand-200)"></div>
+                  <div class="more">+1 more</div>
+                </div>
+                <div class="lbl">Favourites</div>
+              </div>
+              <div class="coll-card">
+                <div class="coll-thumbs">
+                  <div class="thumb" style="background:var(--green-100)"></div>
+                  <div class="thumb" style="background:var(--yellow-100)"></div>
+                  <div class="thumb" style="background:var(--coral-100)"></div>
+                  <div class="more">+15 more</div>
+                </div>
+                <div class="lbl">Vegetables &amp; Fruits</div>
               </div>
             </div>
           </div>
-          <div class="tabbar">
-            <div class="tab active"><svg class="icon" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path></svg><span>Home</span></div>
-            <div class="tab"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg><span>Categories</span></div>
-            <div class="tab"><svg class="icon" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.4"></circle><circle cx="18" cy="20" r="1.4"></circle><path d="M2 3h2l2.6 12.4A2 2 0 0 0 8.6 17H18a2 2 0 0 0 2-1.6L21.6 7H5.2"></path></svg><span>Cart</span></div>
-            <div class="tab"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"></circle><path d="M4.5 21c1.5-4.5 5-6 7.5-6s6 1.5 7.5 6"></path></svg><span>Account</span></div>
+          <div class="tabbar-wrap">
+            <div class="tabbar">
+              <div class="tab active"><svg class="icon" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path></svg><span>Home</span></div>
+              <div class="tab"><svg class="icon" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.4"></circle><circle cx="18" cy="20" r="1.4"></circle><path d="M2 3h2l2.6 12.4A2 2 0 0 0 8.6 17H18a2 2 0 0 0 2-1.6L21.6 7H5.2"></path></svg><span>Order Again</span></div>
+              <div class="tab"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg><span>Categories</span></div>
+              <div class="tab"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9V4h12v5"></path><path d="M6 18h12v4H6z"></path><rect x="4" y="9" width="16" height="8" rx="1.5"></rect></svg><span>Print</span></div>
+            </div>
+            <div class="partner-fab"><span>district ↗</span></div>
           </div>
         </div>
       </div>
       <figcaption class="caption">
         <span class="num">SCREEN 02 — NEW, ADDITIVE</span>
         <h3>Concierge entry point</h3>
-        <p>One coral prompt card, added below search. Everything else on the home screen — banner, categories, Buy it again — stays exactly as it is today.</p>
+        <p>One coral prompt card slotted below search. Every other pixel — merchandising grid, IP store banner, Frequently bought, tab bar — is identical to Screen 01: nothing existing was touched to add this.</p>
       </figcaption>
     </figure>
 
@@ -487,9 +647,11 @@
         <div class="notch"></div>
         <div class="screen">
           <div class="statusbar">
-            <span>9:42</span>
+            <span>2:52</span>
             <span class="icons">
               <svg class="icon filled" viewBox="0 0 20 12"><rect x="0" y="7" width="3" height="5" rx="0.5"></rect><rect x="5" y="4" width="3" height="8" rx="0.5"></rect><rect x="10" y="1" width="3" height="11" rx="0.5"></rect><rect x="15" y="0" width="4" height="12" rx="1"></rect></svg>
+              <span class="g4">4G</span>
+              <span class="battery-pill">8</span>
             </span>
           </div>
           <div class="chat-topbar">
@@ -523,9 +685,11 @@
         <div class="notch"></div>
         <div class="screen">
           <div class="statusbar">
-            <span>9:43</span>
+            <span>2:53</span>
             <span class="icons">
               <svg class="icon filled" viewBox="0 0 20 12"><rect x="0" y="7" width="3" height="5" rx="0.5"></rect><rect x="5" y="4" width="3" height="8" rx="0.5"></rect><rect x="10" y="1" width="3" height="11" rx="0.5"></rect><rect x="15" y="0" width="4" height="12" rx="1"></rect></svg>
+              <span class="g4">4G</span>
+              <span class="battery-pill">8</span>
             </span>
           </div>
           <div class="chat-topbar">
@@ -596,6 +760,8 @@
       <p>
         Nothing here is a reskin of an existing Blinkit feature under a new name. Each row below names
         the real surface a user has today, what changes, and which piece of research justifies the change.
+        The production app already does more occasion merchandising than the first design pass assumed —
+        the table below was corrected against a live screenshot audit, not left as an untested guess.
       </p>
     </div>
 
@@ -611,33 +777,33 @@
         </thead>
         <tbody>
           <tr>
-            <td class="dim">Entry point</td>
-            <td class="today">Generic homepage: same banner and category grid for every user, every session.</td>
-            <td class="new"><span class="tag">Screen 02</span>A single opt-in prompt card. Nothing is injected into the home layout — the user chooses to open it.</td>
-            <td class="why">"The homepage feels repetitive. I see the same products every time." — Interview 3</td>
+            <td class="dim">Occasion merchandising</td>
+            <td class="today">Already extensive — Gifting Corner, Party With Friends, Date Night Edit, a seasonal IP store, all live on the home screen today. This is not a gap.</td>
+            <td class="new"><span class="tag">Screen 03</span>Responds to <em>any</em> occasion the user types, not just the ones merchandising picked this week — and personalizes to specifics (headcount, preference) a static tile can't ask for.</td>
+            <td class="why">Confirmed by live screenshot audit, 2026-08-01 — this row was corrected after seeing the real app; the earlier draft understated how much occasion merchandising already exists.</td>
           </tr>
           <tr>
             <td class="dim">How suggestions are chosen</td>
-            <td class="today">Algorithmic cross-sell / "you may also like," inferred from purchase history, not from a stated need.</td>
-            <td class="new"><span class="tag">Screen 03</span>Generated from what the user says, refined by one clarifying question — relevance is explicit, not inferred.</td>
+            <td class="today">A merchandising team pre-picks a fixed set of tiles, same for every user, on a campaign calendar.</td>
+            <td class="new"><span class="tag">Screen 03</span>Generated from what the user says, refined by one clarifying question — relevance is explicit, not merchandising-curated.</td>
             <td class="why">"Most recommendations aren't related to my shopping list." — Interview 2</td>
           </tr>
           <tr>
             <td class="dim">Where trust signals live</td>
-            <td class="today">Ratings exist, but only inside a product's own page — a user must already be considering that exact item to see them.</td>
+            <td class="today">Zero — none of the merchandising tiles (Gifting Corner, Party With Friends, etc.) show a rating or review anywhere on the tile or its landing page preview.</td>
             <td class="new"><span class="tag">Screen 04</span>Rating + review snippet + "why this" shown inline, at the moment the item is suggested — no extra tap required.</td>
             <td class="why">Reviews and nutritional detail were what turned uncertainty into a purchase. — Interview 4; AI insight (moderate strength)</td>
           </tr>
           <tr>
             <td class="dim">When discovery happens</td>
-            <td class="today">The one discovery moment on record today is at checkout, via a discount that happens to appear.</td>
+            <td class="today">Either passively on the home screen (tiles) or reactively at checkout (discount upsell) — never elicited from a stated need.</td>
             <td class="new">Discovery happens when the need is stated, before the cart is built — shaping the order, not tailing it.</td>
             <td class="why">"Only when something appeared during checkout with a discount." — Interview 1</td>
           </tr>
           <tr>
             <td class="dim">Reorder-mode sessions</td>
-            <td class="today">No separation — the same homepage serves a 3-minute reorder and a browsing session identically.</td>
-            <td class="new">Concierge is a separate, user-initiated screen (03/04). Buy Again, search and categories are untouched — zero added friction for speed-only sessions.</td>
+            <td class="today">No separation — the same home screen with the same merchandising tiles serves a 3-minute reorder and a browsing session identically.</td>
+            <td class="new">Concierge is a separate, user-initiated screen (03/04). Buy Again, search, categories and every merchandising tile are untouched — zero added friction for speed-only sessions.</td>
             <td class="why">Part 1 discovery engine flagged segment/mode differences as unanswerable from review data alone — this is the gap primary research filled.</td>
           </tr>
         </tbody>
