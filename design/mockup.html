@@ -1,0 +1,660 @@
+<title>Occasion Concierge — High-Fidelity Mockup</title>
+<style>
+  :root {
+    --bg-canvas: #F3EEE2;
+    --canvas-line: #E4DCC8;
+    --app-bg: #FFFDF8;
+    --app-bg-raised: #FFFFFF;
+    --yellow-500: #F8CB46;
+    --yellow-600: #E9B627;
+    --yellow-100: #FCF0CE;
+    --ink-900: #18161A;
+    --ink-700: #3A3733;
+    --ink-500: #6E6A62;
+    --ink-300: #A8A296;
+    --sand-100: #F6F1E4;
+    --sand-200: #EEE6D2;
+    --sand-300: #E2D8BE;
+    --green-600: #1E9E5A;
+    --green-100: #E1F4E9;
+    --coral-500: #FF5C4D;
+    --coral-600: #E84A3C;
+    --coral-100: #FFE7E2;
+    --star: #F5A623;
+    --shadow-phone: 0 40px 80px -32px rgba(24, 22, 26, 0.45), 0 8px 24px -12px rgba(24, 22, 26, 0.25);
+    --radius-phone: 46px;
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-canvas: #16140F;
+      --canvas-line: #262218;
+      --app-bg: #1E1B15;
+      --app-bg-raised: #262218;
+      --yellow-100: #3A2E12;
+      --ink-900: #F3EFE4;
+      --ink-700: #D8D2C2;
+      --ink-500: #A39C8B;
+      --ink-300: #6B6455;
+      --sand-100: #241F17;
+      --sand-200: #2C2619;
+      --sand-300: #3A3222;
+      --green-100: #163524;
+      --coral-100: #3A1E19;
+      --shadow-phone: 0 40px 80px -32px rgba(0, 0, 0, 0.7), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg-canvas: #16140F; --canvas-line: #262218; --app-bg: #1E1B15; --app-bg-raised: #262218;
+    --yellow-100: #3A2E12; --ink-900: #F3EFE4; --ink-700: #D8D2C2; --ink-500: #A39C8B; --ink-300: #6B6455;
+    --sand-100: #241F17; --sand-200: #2C2619; --sand-300: #3A3222; --green-100: #163524; --coral-100: #3A1E19;
+    --shadow-phone: 0 40px 80px -32px rgba(0,0,0,.7), 0 8px 24px -12px rgba(0,0,0,.5); color-scheme: dark;
+  }
+  :root[data-theme="light"] {
+    --bg-canvas: #F3EEE2; --canvas-line: #E4DCC8; --app-bg: #FFFDF8; --app-bg-raised: #FFFFFF;
+    --yellow-100: #FCF0CE; --ink-900: #18161A; --ink-700: #3A3733; --ink-500: #6E6A62; --ink-300: #A8A296;
+    --sand-100: #F6F1E4; --sand-200: #EEE6D2; --sand-300: #E2D8BE; --green-100: #E1F4E9; --coral-100: #FFE7E2;
+    --shadow-phone: 0 40px 80px -32px rgba(24,22,26,.45), 0 8px 24px -12px rgba(24,22,26,.25); color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg-canvas);
+    color: var(--ink-900);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+  img, svg { display: block; }
+  button { font: inherit; }
+  ::selection { background: var(--coral-100); }
+
+  .stage { max-width: 1360px; margin: 0 auto; padding: 56px 32px 96px; }
+
+  /* ---------- Header ---------- */
+  .stage-head { max-width: 760px; margin-bottom: 56px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--coral-600); margin-bottom: 18px;
+  }
+  .eyebrow::before {
+    content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--coral-500);
+  }
+  h1.title {
+    font-size: clamp(32px, 4.4vw, 46px); line-height: 1.08; letter-spacing: -0.015em;
+    margin: 0 0 16px; font-weight: 800; text-wrap: balance;
+  }
+  .stage-head .dek {
+    font-size: 17px; color: var(--ink-700); max-width: 62ch; margin: 0;
+  }
+  .stage-head .meta {
+    display: flex; gap: 24px; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--canvas-line);
+    flex-wrap: wrap;
+  }
+  .meta-item { font-size: 13px; color: var(--ink-500); }
+  .meta-item strong { display: block; font-size: 13px; color: var(--ink-900); font-weight: 700; margin-bottom: 2px; }
+
+  /* ---------- Phone gallery ---------- */
+  .phone-gallery {
+    display: grid; grid-auto-flow: column; grid-auto-columns: 264px;
+    gap: 28px; overflow-x: auto; padding: 8px 4px 28px; margin: 0 -4px 64px;
+    scroll-snap-type: x proximity;
+  }
+  .phone-card { scroll-snap-align: start; }
+  .phone {
+    width: 264px; height: 552px; border-radius: var(--radius-phone);
+    background: var(--ink-900); padding: 12px; box-shadow: var(--shadow-phone);
+    position: relative;
+  }
+  .screen {
+    width: 100%; height: 100%; background: var(--app-bg);
+    border-radius: calc(var(--radius-phone) - 14px); overflow: hidden;
+    position: relative; display: flex; flex-direction: column;
+  }
+  .notch {
+    position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
+    width: 84px; height: 22px; background: var(--ink-900); border-radius: 12px; z-index: 5;
+  }
+  .statusbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 22px 4px; font-size: 12px; font-weight: 700; color: var(--ink-900);
+    font-variant-numeric: tabular-nums; flex-shrink: 0;
+  }
+  .statusbar .icons { display: flex; gap: 4px; align-items: center; }
+
+  figcaption.caption { margin-top: 18px; max-width: 264px; }
+  .caption .num {
+    font-size: 12px; font-weight: 800; color: var(--coral-600); letter-spacing: 0.06em;
+    font-variant-numeric: tabular-nums;
+  }
+  .caption h3 { font-size: 15px; margin: 4px 0 6px; font-weight: 700; }
+  .caption p { font-size: 13px; color: var(--ink-500); margin: 0; }
+
+  /* ---------- shared UI atoms ---------- */
+  .icon { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .icon.filled { fill: currentColor; stroke: none; }
+
+  .topbar { padding: 2px 16px 10px; flex-shrink: 0; }
+  .loc-row { display: flex; align-items: center; gap: 6px; }
+  .loc-row .icon { width: 14px; height: 14px; color: var(--coral-500); }
+  .loc-eta { font-size: 14px; font-weight: 800; }
+  .loc-sub { display: flex; align-items: center; gap: 6px; margin-top: 1px; }
+  .loc-addr { font-size: 11.5px; color: var(--ink-500); }
+  .topbar-row { display: flex; align-items: flex-start; justify-content: space-between; }
+  .avatar {
+    width: 28px; height: 28px; border-radius: 50%; background: var(--yellow-500);
+    display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; color: var(--ink-900);
+    flex-shrink: 0;
+  }
+
+  .searchbar {
+    display: flex; align-items: center; gap: 8px; background: var(--sand-100);
+    border: 1px solid var(--sand-300); border-radius: 12px; padding: 9px 12px; margin-top: 12px;
+  }
+  .searchbar .icon { width: 15px; height: 15px; color: var(--ink-300); flex-shrink: 0; }
+  .searchbar span { font-size: 12.5px; color: var(--ink-300); }
+
+  .prompt-card {
+    display: flex; align-items: center; gap: 10px; margin-top: 10px;
+    background: var(--coral-100); border: 1px solid var(--coral-500);
+    border-radius: 13px; padding: 10px 12px;
+  }
+  .prompt-card .bubble-ic {
+    width: 26px; height: 26px; border-radius: 50%; background: var(--coral-500);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .prompt-card .bubble-ic .icon { width: 13px; height: 13px; color: #fff; }
+  .prompt-card .txt { flex: 1; }
+  .prompt-card .txt strong { display: block; font-size: 12px; font-weight: 800; color: var(--coral-600); }
+  .prompt-card .txt span { font-size: 11px; color: var(--ink-700); }
+  .prompt-card .icon.chev { width: 13px; height: 13px; color: var(--coral-500); flex-shrink: 0; }
+
+  .scroll-area { flex: 1; overflow-y: auto; padding-bottom: 8px; }
+
+  .banner {
+    margin: 12px 16px 0; height: 66px; border-radius: 12px;
+    background: linear-gradient(120deg, var(--yellow-500), var(--yellow-600));
+    display: flex; flex-direction: column; justify-content: center; padding: 0 14px;
+  }
+  .banner strong { font-size: 12.5px; font-weight: 800; color: var(--ink-900); }
+  .banner span { font-size: 10.5px; color: var(--ink-700); margin-top: 2px; }
+
+  .section-title {
+    font-size: 12.5px; font-weight: 800; margin: 16px 16px 8px; display: flex; justify-content: space-between;
+  }
+  .section-title small { font-weight: 600; color: var(--ink-300); font-size: 11px; }
+
+  .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px 6px; padding: 0 16px; }
+  .cat-item { display: flex; flex-direction: column; align-items: center; gap: 5px; }
+  .cat-item .sw { width: 46px; height: 46px; border-radius: 13px; display: flex; align-items: center; justify-content: center; }
+  .cat-item span { font-size: 9.5px; text-align: center; color: var(--ink-700); font-weight: 600; line-height: 1.15; }
+
+  .h-row { display: flex; gap: 10px; overflow-x: auto; padding: 0 16px; scroll-snap-type: x proximity; }
+  .product-card {
+    scroll-snap-align: start; flex-shrink: 0; width: 96px; background: var(--app-bg-raised);
+    border: 1px solid var(--sand-300); border-radius: 12px; padding: 8px;
+  }
+  .product-card .sw { width: 100%; height: 52px; border-radius: 8px; margin-bottom: 6px; }
+  .product-card .pname { font-size: 10px; font-weight: 600; color: var(--ink-900); line-height: 1.2; height: 24px; overflow: hidden; }
+  .product-card .prow { display: flex; justify-content: space-between; align-items: center; margin-top: 4px; }
+  .product-card .price { font-size: 11px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .product-card .add-btn {
+    width: 20px; height: 20px; border-radius: 6px; border: 1px solid var(--green-600); color: var(--green-600);
+    background: var(--green-100); display: flex; align-items: center; justify-content: center;
+  }
+  .product-card .add-btn .icon { width: 11px; height: 11px; stroke-width: 2.4; }
+
+  .tabbar {
+    display: flex; justify-content: space-around; align-items: center; padding: 10px 8px 14px;
+    border-top: 1px solid var(--sand-300); background: var(--app-bg-raised); flex-shrink: 0;
+  }
+  .tab { display: flex; flex-direction: column; align-items: center; gap: 3px; color: var(--ink-300); }
+  .tab.active { color: var(--ink-900); }
+  .tab .icon { width: 18px; height: 18px; }
+  .tab span { font-size: 8.5px; font-weight: 700; }
+
+  /* ---------- chat screen ---------- */
+  .chat-topbar {
+    display: flex; align-items: center; gap: 10px; padding: 10px 14px 12px;
+    border-bottom: 1px solid var(--sand-300); flex-shrink: 0;
+  }
+  .chat-topbar .icon.back { width: 17px; height: 17px; color: var(--ink-900); }
+  .chat-topbar .ttl { flex: 1; }
+  .chat-topbar .ttl strong { display: block; font-size: 13px; font-weight: 800; }
+  .chat-topbar .ttl span { font-size: 10px; color: var(--green-600); font-weight: 700; }
+  .chat-topbar .ttl span::before { content: "● "; }
+  .chat-topbar .icon.close { width: 15px; height: 15px; color: var(--ink-300); }
+
+  .chat-thread { flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+  .bubble { max-width: 84%; padding: 9px 12px; border-radius: 15px; font-size: 12px; line-height: 1.4; }
+  .bubble.agent { align-self: flex-start; background: var(--sand-200); color: var(--ink-900); border-bottom-left-radius: 4px; }
+  .bubble.user { align-self: flex-end; background: var(--coral-500); color: #fff; border-bottom-right-radius: 4px; }
+  .typing { align-self: flex-start; background: var(--sand-200); border-radius: 15px; border-bottom-left-radius: 4px; padding: 11px 14px; display: flex; gap: 4px; }
+  .typing i { width: 5px; height: 5px; border-radius: 50%; background: var(--ink-300); display: block; animation: bounce 1.1s infinite ease-in-out; }
+  .typing i:nth-child(2) { animation-delay: .15s; }
+  .typing i:nth-child(3) { animation-delay: .3s; }
+  @keyframes bounce { 0%, 60%, 100% { transform: translateY(0); opacity: .5; } 30% { transform: translateY(-3px); opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .typing i { animation: none; opacity: .8; } }
+
+  .chat-input {
+    display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-top: 1px solid var(--sand-300); flex-shrink: 0;
+  }
+  .chat-input .field {
+    flex: 1; background: var(--sand-100); border: 1px solid var(--sand-300); border-radius: 18px;
+    padding: 8px 12px; font-size: 11.5px; color: var(--ink-300);
+  }
+  .chat-input .send { width: 30px; height: 30px; border-radius: 50%; background: var(--coral-500); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .chat-input .send .icon { width: 13px; height: 13px; color: #fff; }
+
+  /* ---------- result screen ---------- */
+  .result-top { padding: 10px 16px 6px; flex-shrink: 0; }
+  .result-top .rtop-row { display: flex; align-items: center; gap: 10px; }
+  .result-top h4 { font-size: 15px; font-weight: 800; margin: 0; flex: 1; }
+  .count-pill { font-size: 10px; font-weight: 700; background: var(--sand-200); color: var(--ink-700); padding: 3px 8px; border-radius: 100px; }
+  .result-top .sub { font-size: 10.5px; color: var(--ink-500); margin-top: 5px; }
+
+  .item-list { flex: 1; overflow-y: auto; padding: 8px 14px 4px; display: flex; flex-direction: column; gap: 9px; }
+  .item-card { display: flex; gap: 9px; background: var(--app-bg-raised); border: 1px solid var(--sand-300); border-radius: 13px; padding: 9px; }
+  .item-swatch { width: 42px; height: 42px; border-radius: 9px; flex-shrink: 0; }
+  .item-body { flex: 1; min-width: 0; }
+  .item-name-row { display: flex; justify-content: space-between; gap: 6px; align-items: flex-start; }
+  .item-name { font-size: 11px; font-weight: 700; line-height: 1.25; }
+  .item-price { font-size: 11px; font-weight: 800; font-variant-numeric: tabular-nums; flex-shrink: 0; }
+  .item-rating { display: flex; align-items: center; gap: 4px; margin-top: 3px; }
+  .item-rating .icon { width: 10px; height: 10px; color: var(--star); }
+  .item-rating span { font-size: 9.5px; color: var(--ink-500); font-weight: 700; font-variant-numeric: tabular-nums; }
+  .item-quote { font-size: 9.5px; color: var(--ink-700); font-style: italic; margin: 4px 0 0; line-height: 1.3; }
+  .item-why { display: inline-block; margin-top: 5px; font-size: 8.5px; font-weight: 700; color: var(--coral-600); background: var(--coral-100); padding: 2px 6px; border-radius: 6px; }
+
+  .sticky-cta { padding: 10px 14px 14px; border-top: 1px solid var(--sand-300); flex-shrink: 0; }
+  .cta-btn {
+    width: 100%; background: var(--coral-500); color: #fff; border: none; border-radius: 12px;
+    padding: 11px; font-size: 12px; font-weight: 800; display: flex; justify-content: space-between; align-items: center; padding-inline: 14px;
+  }
+  .cta-btn .icon { width: 13px; height: 13px; color: #fff; }
+  .sticky-cta .foot-note { text-align: center; font-size: 9px; color: var(--ink-300); margin-top: 6px; }
+
+  /* ---------- diff section ---------- */
+  .diff { max-width: 980px; }
+  .diff-head { max-width: 640px; margin-bottom: 28px; }
+  .diff-head h2 { font-size: 24px; margin: 0 0 10px; font-weight: 800; letter-spacing: -0.01em; }
+  .diff-head p { font-size: 14.5px; color: var(--ink-700); margin: 0; }
+
+  .diff-table-wrap { overflow-x: auto; border-radius: 16px; border: 1px solid var(--canvas-line); background: var(--app-bg-raised); }
+  .diff-table { width: 100%; border-collapse: collapse; min-width: 760px; }
+  .diff-table th {
+    text-align: left; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--ink-500); padding: 14px 18px; background: var(--sand-100); border-bottom: 1px solid var(--canvas-line);
+  }
+  .diff-table td { padding: 16px 18px; font-size: 13px; vertical-align: top; border-bottom: 1px solid var(--canvas-line); }
+  .diff-table tr:last-child td { border-bottom: none; }
+  .diff-table td.dim { font-weight: 700; width: 15%; }
+  .diff-table td .cite { display: block; margin-top: 6px; font-size: 11.5px; color: var(--ink-500); }
+  .diff-table td.today { color: var(--ink-700); width: 30%; }
+  .diff-table td.new { color: var(--ink-900); width: 30%; font-weight: 500; }
+  .diff-table td.new .tag {
+    display: inline-block; font-size: 9.5px; font-weight: 800; color: var(--coral-600); background: var(--coral-100);
+    padding: 2px 7px; border-radius: 6px; margin-bottom: 6px; letter-spacing: 0.04em;
+  }
+  .diff-table td.why { width: 25%; color: var(--ink-500); font-size: 12.5px; }
+
+  .grounding {
+    margin-top: 28px; padding: 18px 22px; background: var(--sand-100); border: 1px solid var(--sand-300);
+    border-radius: 14px; font-size: 13px; color: var(--ink-700); max-width: 760px;
+  }
+  .grounding strong { color: var(--ink-900); }
+
+  .page-foot {
+    margin-top: 72px; padding-top: 24px; border-top: 1px solid var(--canvas-line);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+    font-size: 12px; color: var(--ink-300);
+  }
+
+  @media (max-width: 640px) {
+    .stage { padding: 36px 18px 64px; }
+    .diff-table td.why { display: none; }
+    .diff-table th:last-child { display: none; }
+  }
+</style>
+
+<div class="stage">
+
+  <header class="stage-head">
+    <div class="eyebrow">Blinkit MVP · Design Pass 01</div>
+    <h1 class="title">Occasion Concierge — high-fidelity screens</h1>
+    <p class="dek">
+      Four screens showing the chosen Part 4 solution end to end: a conversational, occasion-triggered
+      discovery surface layered onto the existing Blinkit home — never replacing it, only appearing
+      when a user actually asks for it.
+    </p>
+    <div class="meta">
+      <div class="meta-item"><strong>Hypotheses covered</strong>H1 · H2 · H3</div>
+      <div class="meta-item"><strong>Primary segment</strong>Trust-Ready Explorers</div>
+      <div class="meta-item"><strong>Screens</strong>Baseline → Entry → Conversation → Result</div>
+      <div class="meta-item"><strong>Source</strong>docs/part3, docs/part4-mvp-proposal.md</div>
+    </div>
+  </header>
+
+  <section class="phone-gallery" aria-label="Mockup screens">
+
+    <!-- SCREEN 01 — baseline home -->
+    <figure class="phone-card">
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="screen">
+          <div class="statusbar">
+            <span>9:41</span>
+            <span class="icons">
+              <svg class="icon filled" viewBox="0 0 20 12"><rect x="0" y="7" width="3" height="5" rx="0.5"></rect><rect x="5" y="4" width="3" height="8" rx="0.5"></rect><rect x="10" y="1" width="3" height="11" rx="0.5"></rect><rect x="15" y="0" width="4" height="12" rx="1"></rect></svg>
+            </span>
+          </div>
+          <div class="topbar">
+            <div class="topbar-row">
+              <div>
+                <div class="loc-row">
+                  <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22Z"></path><circle cx="12" cy="9.5" r="2.4"></circle></svg>
+                  <span class="loc-eta">Delivery in 8 mins</span>
+                </div>
+                <div class="loc-sub"><span class="loc-addr">Home · HSR Layout, Bengaluru</span></div>
+              </div>
+              <div class="avatar">A</div>
+            </div>
+            <div class="searchbar">
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.6" y2="16.6"></line></svg>
+              <span>Search "milk"</span>
+            </div>
+          </div>
+          <div class="scroll-area">
+            <div class="banner"><strong>Monsoon Munchies</strong><span>Flat 20% off · same banner for everyone</span></div>
+            <div class="section-title">Categories</div>
+            <div class="cat-grid">
+              <div class="cat-item"><div class="sw" style="background:var(--green-100)">🥦</div><span>Fruits &amp; Veg</span></div>
+              <div class="cat-item"><div class="sw" style="background:var(--yellow-100)">🥛</div><span>Dairy &amp; Breakfast</span></div>
+              <div class="cat-item"><div class="sw" style="background:var(--coral-100)">🍪</div><span>Munchies</span></div>
+              <div class="cat-item"><div class="sw" style="background:var(--sand-200)">🧴</div><span>Household</span></div>
+            </div>
+            <div class="section-title">Buy it again <small>from your orders</small></div>
+            <div class="h-row">
+              <div class="product-card">
+                <div class="sw" style="background:var(--yellow-100)"></div>
+                <div class="pname">Amul Gold Milk 500ml</div>
+                <div class="prow"><span class="price">₹29</span><span class="add-btn"><svg class="icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span></div>
+              </div>
+              <div class="product-card">
+                <div class="sw" style="background:var(--sand-200)"></div>
+                <div class="pname">Farm Eggs, 6 pc</div>
+                <div class="prow"><span class="price">₹78</span><span class="add-btn"><svg class="icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span></div>
+              </div>
+              <div class="product-card">
+                <div class="sw" style="background:var(--yellow-100)"></div>
+                <div class="pname">Britannia Bread</div>
+                <div class="prow"><span class="price">₹45</span><span class="add-btn"><svg class="icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="tabbar">
+            <div class="tab active"><svg class="icon" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path></svg><span>Home</span></div>
+            <div class="tab"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg><span>Categories</span></div>
+            <div class="tab"><svg class="icon" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.4"></circle><circle cx="18" cy="20" r="1.4"></circle><path d="M2 3h2l2.6 12.4A2 2 0 0 0 8.6 17H18a2 2 0 0 0 2-1.6L21.6 7H5.2"></path></svg><span>Cart</span></div>
+            <div class="tab"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"></circle><path d="M4.5 21c1.5-4.5 5-6 7.5-6s6 1.5 7.5 6"></path></svg><span>Account</span></div>
+          </div>
+        </div>
+      </div>
+      <figcaption class="caption">
+        <span class="num">SCREEN 01 — TODAY</span>
+        <h3>Baseline home</h3>
+        <p>What ships today: static banner, generic category grid, and a "Buy it again" row. Same layout regardless of what the user actually needs right now.</p>
+      </figcaption>
+    </figure>
+
+    <!-- SCREEN 02 — entry point -->
+    <figure class="phone-card">
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="screen">
+          <div class="statusbar">
+            <span>9:41</span>
+            <span class="icons">
+              <svg class="icon filled" viewBox="0 0 20 12"><rect x="0" y="7" width="3" height="5" rx="0.5"></rect><rect x="5" y="4" width="3" height="8" rx="0.5"></rect><rect x="10" y="1" width="3" height="11" rx="0.5"></rect><rect x="15" y="0" width="4" height="12" rx="1"></rect></svg>
+            </span>
+          </div>
+          <div class="topbar">
+            <div class="topbar-row">
+              <div>
+                <div class="loc-row">
+                  <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22Z"></path><circle cx="12" cy="9.5" r="2.4"></circle></svg>
+                  <span class="loc-eta">Delivery in 8 mins</span>
+                </div>
+                <div class="loc-sub"><span class="loc-addr">Home · HSR Layout, Bengaluru</span></div>
+              </div>
+              <div class="avatar">A</div>
+            </div>
+            <div class="searchbar">
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.6" y2="16.6"></line></svg>
+              <span>Search "milk"</span>
+            </div>
+            <div class="prompt-card">
+              <div class="bubble-ic"><svg class="icon" viewBox="0 0 24 24" style="stroke:#fff"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
+              <div class="txt"><strong>Planning something?</strong><span>Tell Blinkit the occasion</span></div>
+              <svg class="icon chev" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </div>
+          </div>
+          <div class="scroll-area">
+            <div class="banner"><strong>Monsoon Munchies</strong><span>Flat 20% off · unchanged</span></div>
+            <div class="section-title">Categories</div>
+            <div class="cat-grid">
+              <div class="cat-item"><div class="sw" style="background:var(--green-100)">🥦</div><span>Fruits &amp; Veg</span></div>
+              <div class="cat-item"><div class="sw" style="background:var(--yellow-100)">🥛</div><span>Dairy &amp; Breakfast</span></div>
+              <div class="cat-item"><div class="sw" style="background:var(--coral-100)">🍪</div><span>Munchies</span></div>
+              <div class="cat-item"><div class="sw" style="background:var(--sand-200)">🧴</div><span>Household</span></div>
+            </div>
+            <div class="section-title">Buy it again <small>from your orders</small></div>
+            <div class="h-row">
+              <div class="product-card">
+                <div class="sw" style="background:var(--yellow-100)"></div>
+                <div class="pname">Amul Gold Milk 500ml</div>
+                <div class="prow"><span class="price">₹29</span><span class="add-btn"><svg class="icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span></div>
+              </div>
+              <div class="product-card">
+                <div class="sw" style="background:var(--sand-200)"></div>
+                <div class="pname">Farm Eggs, 6 pc</div>
+                <div class="prow"><span class="price">₹78</span><span class="add-btn"><svg class="icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="tabbar">
+            <div class="tab active"><svg class="icon" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path></svg><span>Home</span></div>
+            <div class="tab"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg><span>Categories</span></div>
+            <div class="tab"><svg class="icon" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.4"></circle><circle cx="18" cy="20" r="1.4"></circle><path d="M2 3h2l2.6 12.4A2 2 0 0 0 8.6 17H18a2 2 0 0 0 2-1.6L21.6 7H5.2"></path></svg><span>Cart</span></div>
+            <div class="tab"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"></circle><path d="M4.5 21c1.5-4.5 5-6 7.5-6s6 1.5 7.5 6"></path></svg><span>Account</span></div>
+          </div>
+        </div>
+      </div>
+      <figcaption class="caption">
+        <span class="num">SCREEN 02 — NEW, ADDITIVE</span>
+        <h3>Concierge entry point</h3>
+        <p>One coral prompt card, added below search. Everything else on the home screen — banner, categories, Buy it again — stays exactly as it is today.</p>
+      </figcaption>
+    </figure>
+
+    <!-- SCREEN 03 — conversation -->
+    <figure class="phone-card">
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="screen">
+          <div class="statusbar">
+            <span>9:42</span>
+            <span class="icons">
+              <svg class="icon filled" viewBox="0 0 20 12"><rect x="0" y="7" width="3" height="5" rx="0.5"></rect><rect x="5" y="4" width="3" height="8" rx="0.5"></rect><rect x="10" y="1" width="3" height="11" rx="0.5"></rect><rect x="15" y="0" width="4" height="12" rx="1"></rect></svg>
+            </span>
+          </div>
+          <div class="chat-topbar">
+            <svg class="icon back" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            <div class="ttl"><strong>Occasion Concierge</strong><span>grounded in real reviews</span></div>
+            <svg class="icon close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </div>
+          <div class="chat-thread">
+            <div class="bubble agent">Hey! Tell me what's coming up and I'll put together a list — with real ratings and reviews, not guesses.</div>
+            <div class="bubble user">Friends coming over tonight, need snacks + drinks for about 6 people 🎉</div>
+            <div class="bubble agent">Got it — Movie Night for 6. Quick one: chips &amp; dips, or something more filling like frozen snacks? And drinks — soft drinks or mocktail mixers?</div>
+            <div class="bubble user">Frozen snacks + soft drinks works</div>
+            <div class="typing"><i></i><i></i><i></i></div>
+          </div>
+          <div class="chat-input">
+            <div class="field">Type a reply…</div>
+            <div class="send"><svg class="icon" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></div>
+          </div>
+        </div>
+      </div>
+      <figcaption class="caption">
+        <span class="num">SCREEN 03 — NEW, ISOLATED FLOW</span>
+        <h3>Occasion conversation</h3>
+        <p>Full-screen takeover entered only from the prompt card — one clarifying question, never a generic form. Reorder-mode sessions never see this screen.</p>
+      </figcaption>
+    </figure>
+
+    <!-- SCREEN 04 — result -->
+    <figure class="phone-card">
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="screen">
+          <div class="statusbar">
+            <span>9:43</span>
+            <span class="icons">
+              <svg class="icon filled" viewBox="0 0 20 12"><rect x="0" y="7" width="3" height="5" rx="0.5"></rect><rect x="5" y="4" width="3" height="8" rx="0.5"></rect><rect x="10" y="1" width="3" height="11" rx="0.5"></rect><rect x="15" y="0" width="4" height="12" rx="1"></rect></svg>
+            </span>
+          </div>
+          <div class="chat-topbar">
+            <svg class="icon back" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            <div class="ttl" style="flex:none"></div>
+          </div>
+          <div class="result-top">
+            <div class="rtop-row"><h4>Movie Night for 6</h4><span class="count-pill">5 items</span></div>
+            <div class="sub">Picked from real ratings &amp; reviews — swap anything you don't want</div>
+          </div>
+          <div class="item-list">
+            <div class="item-card">
+              <div class="item-swatch" style="background:var(--yellow-100)"></div>
+              <div class="item-body">
+                <div class="item-name-row"><span class="item-name">McCain Frozen Fries, 425g</span><span class="item-price">₹129</span></div>
+                <div class="item-rating"><svg class="icon filled" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"></polygon></svg><span>4.3 (2.1k)</span></div>
+                <p class="item-quote">"crispy, didn't disappoint for a party"</p>
+                <span class="item-why">Pairs with your usual snack orders</span>
+              </div>
+            </div>
+            <div class="item-card">
+              <div class="item-swatch" style="background:var(--coral-100)"></div>
+              <div class="item-body">
+                <div class="item-name-row"><span class="item-name">Lay's Party Pack Assorted, 200g</span><span class="item-price">₹99</span></div>
+                <div class="item-rating"><svg class="icon filled" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"></polygon></svg><span>4.5 (3.4k)</span></div>
+                <p class="item-quote">"goes fast at gatherings, always a hit"</p>
+                <span class="item-why">Bought often for occasions like yours</span>
+              </div>
+            </div>
+            <div class="item-card">
+              <div class="item-swatch" style="background:var(--sand-200)"></div>
+              <div class="item-body">
+                <div class="item-name-row"><span class="item-name">Coca-Cola, 750ml × 2</span><span class="item-price">₹80</span></div>
+                <div class="item-rating"><svg class="icon filled" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"></polygon></svg><span>4.4 (5.0k)</span></div>
+                <p class="item-quote">"cold and on time, sorted the party"</p>
+                <span class="item-why">Matches your usual cold-drinks pick</span>
+              </div>
+            </div>
+            <div class="item-card">
+              <div class="item-swatch" style="background:var(--green-100)"></div>
+              <div class="item-body">
+                <div class="item-name-row"><span class="item-name">Veeba Cheese Dip, 250g</span><span class="item-price">₹149</span></div>
+                <div class="item-rating"><svg class="icon filled" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"></polygon></svg><span>4.1 (860)</span></div>
+                <p class="item-quote">"good with fries, not too tangy"</p>
+                <span class="item-why">New category · 860 rated it before you</span>
+              </div>
+            </div>
+          </div>
+          <div class="sticky-cta">
+            <button class="cta-btn">Add all 5 items · ₹546 <svg class="icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+            <div class="foot-note">or add items individually above</div>
+          </div>
+        </div>
+      </div>
+      <figcaption class="caption">
+        <span class="num">SCREEN 04 — NEW</span>
+        <h3>Curated result</h3>
+        <p>Every item carries a rating, a review-style snippet, and one line of "why this" — the trust signal sits at the decision moment, not buried on a product page.</p>
+      </figcaption>
+    </figure>
+
+  </section>
+
+  <!-- ---------- DIFFERENTIATION ---------- -->
+  <section class="diff" aria-label="Differentiation from production Blinkit">
+    <div class="diff-head">
+      <h2>How this differs from the app that already ships</h2>
+      <p>
+        Nothing here is a reskin of an existing Blinkit feature under a new name. Each row below names
+        the real surface a user has today, what changes, and which piece of research justifies the change.
+      </p>
+    </div>
+
+    <div class="diff-table-wrap">
+      <table class="diff-table">
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th>Already in production</th>
+            <th>New: Occasion Concierge</th>
+            <th>Why (research)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="dim">Entry point</td>
+            <td class="today">Generic homepage: same banner and category grid for every user, every session.</td>
+            <td class="new"><span class="tag">Screen 02</span>A single opt-in prompt card. Nothing is injected into the home layout — the user chooses to open it.</td>
+            <td class="why">"The homepage feels repetitive. I see the same products every time." — Interview 3</td>
+          </tr>
+          <tr>
+            <td class="dim">How suggestions are chosen</td>
+            <td class="today">Algorithmic cross-sell / "you may also like," inferred from purchase history, not from a stated need.</td>
+            <td class="new"><span class="tag">Screen 03</span>Generated from what the user says, refined by one clarifying question — relevance is explicit, not inferred.</td>
+            <td class="why">"Most recommendations aren't related to my shopping list." — Interview 2</td>
+          </tr>
+          <tr>
+            <td class="dim">Where trust signals live</td>
+            <td class="today">Ratings exist, but only inside a product's own page — a user must already be considering that exact item to see them.</td>
+            <td class="new"><span class="tag">Screen 04</span>Rating + review snippet + "why this" shown inline, at the moment the item is suggested — no extra tap required.</td>
+            <td class="why">Reviews and nutritional detail were what turned uncertainty into a purchase. — Interview 4; AI insight (moderate strength)</td>
+          </tr>
+          <tr>
+            <td class="dim">When discovery happens</td>
+            <td class="today">The one discovery moment on record today is at checkout, via a discount that happens to appear.</td>
+            <td class="new">Discovery happens when the need is stated, before the cart is built — shaping the order, not tailing it.</td>
+            <td class="why">"Only when something appeared during checkout with a discount." — Interview 1</td>
+          </tr>
+          <tr>
+            <td class="dim">Reorder-mode sessions</td>
+            <td class="today">No separation — the same homepage serves a 3-minute reorder and a browsing session identically.</td>
+            <td class="new">Concierge is a separate, user-initiated screen (03/04). Buy Again, search and categories are untouched — zero added friction for speed-only sessions.</td>
+            <td class="why">Part 1 discovery engine flagged segment/mode differences as unanswerable from review data alone — this is the gap primary research filled.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grounding">
+      <strong>On the review snippets in Screen 04:</strong> they're written in the register of real
+      reviews already validated in the Part 1 corpus (<code>discovery_engine/data/processed/corpus.jsonl</code>)
+      — short, specific, unpolished. In the shipped agent, these become literal retrieved quotes via the
+      same embedding index `chat_app.py` already uses, not paraphrases invented at design time.
+    </div>
+  </section>
+
+  <footer class="page-foot">
+    <span>blinkit-mvp · design/mockup.html</span>
+    <span>Grounded in docs/part2.md, part3-problem-definition.md, part4-mvp-proposal.md</span>
+  </footer>
+
+</div>
