@@ -1,0 +1,19 @@
+# Only agent/, api/, data/, requirements.txt matter to the Dockerfile --
+# everything else here is irrelevant to the api/ image (web/ deploys
+# separately as a static site) and just slows down the build context upload.
+.git
+.venv
+.env
+.env.example
+.pytest_cache
+__pycache__
+*.pyc
+
+web/
+design/
+docs/
+assets/
+tests/
+
+README.md
+render.yaml

@@ -1,3 +1,21 @@
+---
+title: Occasion Concierge API
+emoji: 🛒
+colorFrom: red
+colorTo: yellow
+sdk: docker
+app_port: 7860
+pinned: false
+short_description: Blinkit Occasion Concierge -- FastAPI backend (agent/ + api/)
+---
+
+<!--
+The YAML block above is Hugging Face Spaces config, read only if this repo is
+connected as a Space (Dockerfile at repo root, this frontmatter tells HF it's
+a Docker SDK Space listening on port 7860). GitHub hides front matter blocks
+like this when rendering README.md, so it doesn't affect the page below.
+-->
+
 # blinkit-mvp — Occasion Concierge
 
 Part 4 deliverable: an AI-native MVP built on the problem definition and solution selection from
