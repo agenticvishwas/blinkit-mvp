@@ -1,5 +1,8 @@
-# Render "Blueprint" for the api/ FastAPI service (docs/phases/phase-4-deploy).
+# Render "Blueprint" for both deployables (docs/phases/phase-4-deploy).
 # In Render: New -> Blueprint -> connect this repo -> it reads this file automatically.
+# Two separate services, two separate URLs, by design: api/ is the only process
+# that ever holds ANTHROPIC_API_KEY, so it can never be served to the browser
+# the way a static site's files are.
 services:
   - type: web
     name: occasion-concierge-api
@@ -14,4 +17,13 @@ services:
       - key: ANTHROPIC_API_KEY
         sync: false # set manually in the Render dashboard -- never committed
       - key: CORS_ORIGINS
-        sync: false # set to the deployed web/ URL once known, e.g. https://occasion-concierge.vercel.app
+        sync: false # set to the static site's URL below once it's live, e.g. https://occasion-concierge-web.onrender.com
+
+staticSites:
+  - name: occasion-concierge-web
+    rootDir: web
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_BASE_URL
+        value: https://occasion-concierge-api.onrender.com # update if your actual api/ service URL differs
