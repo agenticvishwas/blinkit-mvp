@@ -23,13 +23,14 @@ logger = logging.getLogger(__name__)
 
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
-    # Eagerly build the retrieval index (loads sentence-transformers + embeds
-    # the 588-record corpus) at startup instead of lazily on the first real
-    # /api/converse call. This was observed live to be slow/memory-heavy enough
-    # on a free-tier host to surface as a confusing 502 on someone's first
-    # message -- doing it here instead means a boot-time failure shows up
-    # clearly in deploy logs, and every request after a successful startup is
-    # fast because the cache is already warm.
+    # Eagerly build the retrieval index (BM25 over the 588-record corpus, see
+    # agent/retrieval.py) at startup instead of lazily on the first real
+    # /api/converse call. Originally added when retrieval was embedding-based
+    # (sentence-transformers + torch) and slow/memory-heavy enough on a
+    # free-tier host to surface as a confusing 502 on someone's first message
+    # -- BM25 indexing is fast enough now that this matters less, but the
+    # principle still holds: a startup failure shows up clearly in deploy
+    # logs instead of hiding inside a user's first request.
     logger.info("Warming retrieval index at startup...")
     get_loop()
     logger.info("Retrieval index ready.")

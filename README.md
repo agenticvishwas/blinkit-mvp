@@ -44,7 +44,7 @@ graph TB
     subgraph Backend["api/ — FastAPI service (Render)"]
         API["api/main.py<br/>POST /api/converse"]
         Loop["agent/loop.py<br/>ConciergeLoop"]
-        Retrieval["agent/retrieval.py<br/>RetrievalIndex (sentence-transformers)"]
+        Retrieval["agent/retrieval.py<br/>RetrievalIndex (BM25 keyword ranking)"]
     end
 
     Corpus[("data/corpus.jsonl<br/>588 real Blinkit App/Play Store reviews")]
@@ -53,7 +53,7 @@ graph TB
     SPA -- "HTTPS POST, CORS-restricted origin" --> API
     API --> Loop
     Loop -- "1. retrieve_evidence(message)" --> Retrieval
-    Retrieval -- "cosine search, embedded once at startup" --> Corpus
+    Retrieval -- "BM25 keyword search, indexed once at startup" --> Corpus
     Loop -- "2. forced respond() tool call, evidence in context" --> Claude
     Claude -- "structured JSON: type + items[evidence_id, label, rationale]" --> Loop
     Loop -- "3. validate: drop any evidence_id not actually retrieved" --> API
@@ -77,7 +77,7 @@ sequenceDiagram
 
     User->>SPA: types or taps an occasion chip
     SPA->>API: POST /api/converse {message, chat_history}
-    API->>Retrieval: search(message, top_k=5, min_similarity=0.20)
+    API->>Retrieval: search(message, top_k=5, min_score=4.5)
     Retrieval-->>API: ranked Evidence[] (real review snippets, or [] if no real match)
     API->>Claude: system prompt (3 rules) + evidence + forced tool_choice="respond"
     Claude-->>API: respond(type, items:[{label, evidence_id, rationale}], note?)
@@ -117,8 +117,9 @@ flowchart LR
 - [`docs/part4-architecture.md`](docs/part4-architecture.md) — phase-wise build plan, with a
   detailed architecture doc per phase under [`docs/phases/`](docs/phases/).
 - `agent/` — retrieval + the Claude tool-use loop (Phases 0–1), framework-agnostic.
-  - `retrieval.py` — embeds `data/corpus.jsonl` once (`all-MiniLM-L6-v2`), cosine search with a
-    similarity floor (no forced low-quality matches).
+  - `retrieval.py` — BM25 keyword search over `data/corpus.jsonl`, indexed once at startup, with
+    a score floor and stopword filtering (no forced low-quality matches). See "Retrieval
+    strategy" below for why this replaced an earlier embedding-based approach.
   - `loop.py` — one Claude call per turn, forced `tool_choice="respond"`; validates every
     `evidence_id` against what was actually retrieved that turn.
   - `prompts.py` — the system prompt encoding the three structural rules (≤1 clarifying
@@ -145,17 +146,56 @@ flowchart LR
 Built, tested, and deployed.
 
 - **Frontend (Render Static Site):** https://blinkit-mvp-frontend.onrender.com — live.
-- **Backend (Render Web Service):** https://blinkit-mvp.onrender.com — process is up
-  (`/`, `/api/health` return 200), **but `/api/converse` is currently returning 502** even after
-  moving index-warming into a startup hook. Under active investigation — likely the free tier's
-  512MB RAM being insufficient for `torch` + the embedding model rather than a timeout, based on
-  the failure now happening in ~16s instead of the ~90s cold-load window measured locally.
-  Options being weighed: upgrade the Render plan, move embeddings to a hosted API (e.g. Voyage
-  AI) instead of local `torch`, redeploy on Hugging Face Spaces (built for exactly this kind of
-  workload, ~16GB free RAM vs. Render's 512MB), or drop the ML dependency for keyword-based
-  retrieval given the corpus is only 588 records.
+- **Backend (Render Web Service):** https://blinkit-mvp.onrender.com — was returning 502 on
+  `/api/converse` under the embedding-based retrieval (`torch` + `sentence-transformers` too
+  heavy for the free tier's 512MB RAM). Fixed by switching to BM25 keyword retrieval — see
+  "Retrieval strategy" below — which drops the heaviest dependency in the stack entirely.
+  Redeploy in progress as of the last push; re-verify `/api/converse` against the live URL before
+  trusting this line.
 - **Locally:** fully verified end to end — agent loop, API, and SPA all running together, real
-  Claude API calls, real corpus-grounded evidence, zero known bugs.
+  Claude API calls, real corpus-grounded evidence, zero known bugs. Full local test suite now
+  runs in ~2s (was ~90s) with the embedding model gone.
+
+## Retrieval strategy: BM25 keyword search, not embeddings
+
+**Original design (Phases 0–1):** `sentence-transformers` (`all-MiniLM-L6-v2`) embedded the
+corpus once and matched occasion queries by cosine similarity — genuine semantic matching, able
+to connect a query like "get-together" to a review mentioning "party" even without a shared word.
+
+**What went wrong in production:** `sentence-transformers` pulls in `torch`, and even with the
+CPU-only wheel index, the combination was too heavy for Render's free-tier 512MB RAM. It worked
+locally (cold load ~90s, well within a larger machine's memory) but the deployed backend
+returned 502 on `/api/converse` — first plausibly a request-timeout during the ~90s cold
+embedding load, then still failing in ~16s after moving that work to a startup hook, which points
+more toward an outright OOM crash than a timeout.
+
+**Options considered** (see the discussion this decision came out of): upgrade the Render plan
+(no code change, ongoing cost); move embeddings to a hosted API like Voyage AI (keeps semantic
+quality, adds a network dependency + per-query cost); redeploy on a host with more free RAM
+(Hugging Face Spaces looked ideal at ~16GB free — turned out Docker/Gradio Spaces now require a
+paid plan, static-only is free there, which doesn't help a Python backend); or drop the embedding
+model for keyword-based retrieval.
+
+**Decision: BM25 keyword search (`rank-bm25`, depends only on `numpy`).** Chosen because it's the
+only option that fixes the problem at the root — on infrastructure already deployed and working
+— without adding a new account, a new paid plan, or a new external API dependency. Indexing 588
+records is near-instant (the local test suite dropped from ~90s to ~2s), and the memory footprint
+is now trivial.
+
+**The honest tradeoff:** BM25 is lexical, not semantic — it can only match on words that actually
+appear (after stopword filtering) in both the query and a review. It will miss paraphrases an
+embedding model would have caught (e.g. "get-together" won't match a review that only says
+"party"). Migration testing surfaced a concrete example of the failure mode this guards against:
+without stopword filtering, "friends coming over tonight" spuriously matched an unrelated review
+containing "coming from experience... learning Kannada... over time" — filtering common function
+words out of both the query and the corpus before scoring fixes that specific case, but the
+general risk (confident-looking match on a single coincidental content word) is real and inherent
+to keyword matching on a small, topically narrow corpus. `agent/retrieval.py`'s `DEFAULT_MIN_SCORE`
+was set empirically from observed scores during this migration, not from a formal validation
+pass — worth revisiting if collection quality looks off. This doesn't weaken the fabrication
+guarantee itself (evidence is still only ever shown if genuinely retrieved this turn, per the
+Workflow diagram above) — it only affects *which* real reviews get surfaced as evidence, never
+whether shown evidence is real.
 
 ### Run it locally
 
@@ -176,7 +216,7 @@ cd web && npm install && npm run dev   # http://localhost:5173
 cd web && npm test                                                                    # Vitest + React Testing Library
 ```
 
-24 automated tests total (9 Python without a key, 4 Python live against the real API, 11 frontend).
+27 automated tests total (12 Python without a key, 4 Python live against the real API, 11 frontend).
 
 ### Deploying
 
@@ -201,8 +241,8 @@ messages (now a clean 422), evidence quotes rendering as full untruncated review
 short snippets, a 404 on Render's health-check probe of the bare root URL, and reorder+occasion
 mixed-intent messages (e.g. "add milk for my party") being fully redirected instead of helped.
 All have regression tests. Open items: H3's reorder-redirect is prompt-enforced only, with no
-deterministic backstop like the fabrication guard has; the deployed backend has an open 502
-issue on the real conversation endpoint (see Status above).
+deterministic backstop like the fabrication guard has; the deployed backend's 502 issue (see
+"Retrieval strategy" above) needs live re-verification after the BM25 migration redeploys.
 
 ## Why a separate repo
 

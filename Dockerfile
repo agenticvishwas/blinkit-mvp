@@ -11,8 +11,7 @@ RUN useradd --create-home --uid 1000 appuser
 WORKDIR /app
 
 # Install dependencies first (rarely changes) so Docker's layer cache is
-# reused across rebuilds that only touch application code, keeping the
-# 90s-ish cold sentence-transformers/torch install from re-running every push.
+# reused across rebuilds that only touch application code.
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 

@@ -1,12 +1,9 @@
-# CPU-only torch wheels -- sentence-transformers pulls torch transitively, and
-# the default PyPI wheel bundles CUDA binaries (~2GB) that a CPU-only host like
-# Render doesn't need and can't fit in a free-tier build. This index carries
-# CPU-only builds; it's consulted for ALL packages here, including transitive
-# ones, not just ones pinned below.
---extra-index-url https://download.pytorch.org/whl/cpu
-
 anthropic==0.40.0
-sentence-transformers==3.3.1
+# Keyword (BM25) retrieval, not embeddings -- see agent/retrieval.py's revision
+# note and the root README's "Retrieval strategy" section. rank-bm25 depends
+# only on numpy; this replaces sentence-transformers + torch (~2GB, ~90s cold
+# load), which was too heavy for a free-tier host's memory.
+rank-bm25==0.2.2
 numpy
 python-dotenv==1.0.1
 fastapi==0.115.6

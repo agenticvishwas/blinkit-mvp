@@ -1,7 +1,15 @@
 # Phase 0 — Data Foundation
 
-**Status:** not started. **Blocks:** [Phase 1](../phase-1-agent-core/architecture.md).
+**Status:** complete. **Blocks:** [Phase 1](../phase-1-agent-core/architecture.md).
 **Parent plan:** [`part4-architecture.md`](../../part4-architecture.md).
+
+**Revision (2026-08-01):** this doc's retrieval design below describes the original
+embedding-based approach (`sentence-transformers` + cosine similarity). That was replaced with
+BM25 keyword search after the embedding model's `torch` dependency proved too heavy for a
+free-tier deploy host's memory — see the root [`README.md`](../../../README.md)'s "Retrieval
+strategy" section for the full decision writeup. The actual, current implementation is
+`agent/retrieval.py`; treat the embedding-specific detail below as historical context for *why*
+Phase 0 exists, not as a description of what's running today.
 
 ## Problem this phase solves
 
