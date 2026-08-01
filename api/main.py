@@ -4,7 +4,9 @@ the web/ SPA only ever talks to this over HTTP.
 
 Run with: .venv/Scripts/python.exe -m uvicorn api.main:app --reload --port 8000
 """
+import logging
 import os
+from contextlib import asynccontextmanager
 
 from dotenv import load_dotenv
 from fastapi import FastAPI
@@ -16,7 +18,25 @@ from agent.loop import get_loop
 from agent.schema import ChatTurn
 from api.schemas import CollectionCardItemOut, CollectionOut, ConverseRequest, ConverseResponse
 
-app = FastAPI(title="Occasion Concierge API")
+logger = logging.getLogger(__name__)
+
+
+@asynccontextmanager
+async def lifespan(_app: FastAPI):
+    # Eagerly build the retrieval index (loads sentence-transformers + embeds
+    # the 588-record corpus) at startup instead of lazily on the first real
+    # /api/converse call. This was observed live to be slow/memory-heavy enough
+    # on a free-tier host to surface as a confusing 502 on someone's first
+    # message -- doing it here instead means a boot-time failure shows up
+    # clearly in deploy logs, and every request after a successful startup is
+    # fast because the cache is already warm.
+    logger.info("Warming retrieval index at startup...")
+    get_loop()
+    logger.info("Retrieval index ready.")
+    yield
+
+
+app = FastAPI(title="Occasion Concierge API", lifespan=lifespan)
 
 # CORS_ORIGINS: comma-separated exact origins, e.g. "https://occasion-concierge.vercel.app".
 # Defaults to the local Vite dev server only -- never falls back to "*", per

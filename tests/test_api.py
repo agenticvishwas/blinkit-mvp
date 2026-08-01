@@ -94,6 +94,22 @@ def test_health_endpoint():
     assert resp.json() == {"status": "ok"}
 
 
+@patch("api.main.get_loop")
+def test_lifespan_warms_the_index_at_startup(mock_get_loop):
+    """Regression test: the FastAPI lifespan handler must call get_loop() once
+    on startup (agent/retrieval.py's build_index -- slow/memory-heavy) so that
+    cost happens at boot and shows up in deploy logs, not hidden inside a
+    user's first /api/converse request (observed live as a confusing 502).
+    NOTE: lifespan only fires when TestClient is used as a context manager --
+    the plain _client() helper other tests use does NOT trigger it, which is
+    exactly why this needs its own explicit `with` block."""
+    from api.main import app
+
+    with TestClient(app):
+        pass
+    mock_get_loop.assert_called_once()
+
+
 def test_root_returns_200_not_404():
     """Regression test: Render's default health probe (and anyone hitting the
     bare deployed URL) requests "/" -- there was no route for it, so it 404'd.
