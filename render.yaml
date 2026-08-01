@@ -9,6 +9,8 @@ services:
     startCommand: uvicorn api.main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /api/health
     envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7 # also set via .python-version -- belt and suspenders, Render reads either
       - key: ANTHROPIC_API_KEY
         sync: false # set manually in the Render dashboard -- never committed
       - key: CORS_ORIGINS
