@@ -1,0 +1,14 @@
+# Render "Blueprint" for the api/ FastAPI service (docs/phases/phase-4-deploy).
+# In Render: New -> Blueprint -> connect this repo -> it reads this file automatically.
+services:
+  - type: web
+    name: occasion-concierge-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn api.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false # set manually in the Render dashboard -- never committed
+      - key: CORS_ORIGINS
+        sync: false # set to the deployed web/ URL once known, e.g. https://occasion-concierge.vercel.app

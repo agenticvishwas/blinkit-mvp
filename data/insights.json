@@ -1,0 +1,1200 @@
+[
+  {
+    "research_question": "Why do users repeatedly buy from the same categories?",
+    "insights": [
+      {
+        "statement": "Repeat category purchasing is primarily driven by convenience and speed of fulfillment (fast/reliable delivery), not active comparison of alternatives — users describe reordering habitually because Blinkit removes the need to 'step outside' or search elsewhere, reinforcing habitual reordering within familiar categories like groceries and last-minute items.",
+        "strength": "strong",
+        "reasoning": "This is supported by the largest theme (53 items across all sources) with multiple explicit quotes praising speed/convenience as the reason for repeated, even same-day repeat, orders (e.g., ordering 4 times in one day), suggesting habit formation rather than exploration.",
+        "supporting_quote_ids": [
+          "appstore_13003132313",
+          "appstore_13015197780",
+          "appstore_13105189261",
+          "appstore_13057309662",
+          "appstore_12930598198"
+        ],
+        "example_quotes": [
+          {
+            "id": "appstore_13003132313",
+            "text": "Super fast service! I don’t need to step outside to shop!",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          },
+          {
+            "id": "appstore_13015197780",
+            "text": "Review on blinkit Its honestly good and they come in the expected amount of time which is great for last-minute-items Honestly i hope they don’t stop with the good service",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          },
+          {
+            "id": "appstore_13105189261",
+            "text": "Great and fast Just like the name says get your groceries in the blink of an eye!! I live in the US and nothing compares to the speed of this.",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          },
+          {
+            "id": "appstore_13057309662",
+            "text": "Mona Fast and good delivery little bit pricey and one of the delivery driver was too loud but other than it was very good experience and i ordered 4 times today back to back and had good experience overall .",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          },
+          {
+            "id": "appstore_12930598198",
+            "text": "Vijay Very good choice with brand name..easy to order and quick delivery and easy to pay I recommend worth trying..! delivery service",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          }
+        ],
+        "source_diversity": 1
+      },
+      {
+        "statement": "Discount-seeking behavior reinforces repeat purchasing within specific categories, but restrictions on coupons for staple items (ghee, oil, butter, infant food) create friction that can push users to compare across platforms rather than stay loyal to one app for those categories.",
+        "strength": "moderate",
+        "reasoning": "10 items, mostly from Reddit, show a consistent pattern of users actively hunting for discounts and multi-homing across apps (Blinkit, Zepto, JioMart) based on which offers more savings, with explicit frustration about category-level coupon restrictions — but the sample size is moderate and mostly anecdotal/reddit-based rather than broad survey data.",
+        "supporting_quote_ids": [
+          "reddit_1hvxzhh",
+          "reddit_m9kr7qp",
+          "reddit_mlj7pld",
+          "reddit_mkhpd9n",
+          "reddit_m9osqkc"
+        ],
+        "example_quotes": [
+          {
+            "id": "reddit_1hvxzhh",
+            "text": "Why do online grocery retailers like Amazon, FK, Blinkit, JioMart, Bigbasket, Zepto, Swiggy etc don't allow discount coupons on ghee, edible oil, butter, probiotic drinks, infant food etc?",
+            "source": "reddit",
+            "url": "https://reddit.com/r/india/comments/1hvxzhh/why_do_online_grocery_retailers_like_amazon_fk/",
+            "rating": null
+          },
+          {
+            "id": "reddit_m9kr7qp",
+            "text": "Hamari Janta 10 mins blinkit delivery mein discount lene ke liye coupons search kar rahi hai. #JustKidding but sadly true for most online shoppers that covers most of our engineers 😄",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1ibrzk3/deepseekr1_a_chinese_storm_what_about_us/m9kr7qp/",
+            "rating": null
+          },
+          {
+            "id": "reddit_mlj7pld",
+            "text": "This is why I have installed every fcuking instant ecommerce app on my phone and prefer to buy from one that gives more discounts. My personal preference 1. Jiomart (absolutely no charges and lots of discounts on products), delivery is slower but it's still good. 2. Minutes (New favourite) faster de",
+            "source": "reddit",
+            "url": "https://reddit.com/r/india/comments/1jr4r59/zeptos_sneaky_pricing_hiding_the_gst_details/mlj7pld/",
+            "rating": null
+          },
+          {
+            "id": "reddit_mkhpd9n",
+            "text": "Idk man zepto is the best online app to order from for me. Discounts on that shit is insane. Sure they will try to trick you by adding delivery fees and whatnot but if you are not gullible you won't be caught in those traps. Like I remember you had to add the free delivery option to save 30 rupees, ",
+            "source": "reddit",
+            "url": "https://reddit.com/r/india/comments/1jn78cv/disgusted_by_the_sneaky_way_zepto_adds_charges/mkhpd9n/",
+            "rating": null
+          },
+          {
+            "id": "reddit_m9osqkc",
+            "text": "No Zomato/Swiggy. Blinkit/zepto only when absolutely necessary. For Groceries checkout nearby market shops &amp; Dmart. There are offers everywhere; So don't buy something you don't absolutely need, jsit coz you might save something with that offer. No going out on weekends. Even if you go to malls,",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1ibvmta/how_do_you_guys_save_money_in_bengaluru_as/m9osqkc/",
+            "rating": null
+          }
+        ],
+        "source_diversity": 1
+      },
+      {
+        "statement": "Price sensitivity and necessity (rather than brand preference) underlie some repeat category purchases, with a subset of users framing Blinkit usage as a 'majburi' (compulsion) due to lack of ongoing offers, indicating repeat buying may sometimes reflect limited alternatives rather than strong satisfaction.",
+        "strength": "weak",
+        "reasoning": "Only 4 items support this theme, split between positive affordability perception and a negative 'forced use' sentiment, making it hard to generalize; signal is present but evidence volume is too thin for a strong claim.",
+        "supporting_quote_ids": [
+          "appstore_13751338935",
+          "play_f3340a94-5eea-4c46-871d-156703fef7c2",
+          "reddit_m85x0cv"
+        ],
+        "example_quotes": [
+          {
+            "id": "appstore_13751338935",
+            "text": "Majburi m using No offer no discount over pricing",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 1
+          },
+          {
+            "id": "play_f3340a94-5eea-4c46-871d-156703fef7c2",
+            "text": "Everything is available with very affordable price",
+            "source": "play_store",
+            "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+            "rating": 5
+          },
+          {
+            "id": "reddit_m85x0cv",
+            "text": "Check blinkit da , you'll get a cheap price",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1i5lihz/how_many_times_are_you_using_quick_commerce/m85x0cv/",
+            "rating": null
+          }
+        ],
+        "source_diversity": 3
+      }
+    ],
+    "theme_names": [
+      "Repeat Category Purchasing",
+      "Discount Incentives & Restrictions",
+      "Price Sensitivity and Value Perception"
+    ]
+  },
+  {
+    "research_question": "What prevents users from exploring new categories?",
+    "insights": [
+      {
+        "statement": "Prior negative quality/reliability experiences (poor produce quality, defective electronics, non-refundable/hidden fee issues) directly discourage users from trying new or unfamiliar categories on Blinkit, as they generalize a single bad experience into distrust of the platform for that entire category.",
+        "strength": "moderate",
+        "reasoning": "Multiple independent quotes across app_store and reddit describe quality failures in specific new categories (electronics, produce, sports equipment) leading to explicit statements of avoidance ('won't order any electronic items', 'Big Scam', 'no return or exchange on electronics'), suggesting a repeatable pattern rather than isolated complaints.",
+        "supporting_quote_ids": [
+          "appstore_13021589613",
+          "appstore_13165664251",
+          "mouthshut_blinkit-review-uttrnpqlonp",
+          "reddit_1gffgj6",
+          "appstore_12974985371"
+        ],
+        "example_quotes": [
+          {
+            "id": "appstore_13021589613",
+            "text": "Electronic items are of poor quality I bought several electronic items from your store. None of them are of good quality now on I won’t order any electronic items from your store.",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 1
+          },
+          {
+            "id": "appstore_13165664251",
+            "text": "Big Scam: Low quality product with hidden non refundable tags I ordered pickle ball paddles and the quality was shockingly poor. Paddle arrived with swollen uneven surface. Refund was rejected instead same poor quality replacement was offered which I already know is of bad quality. I know it’s an or",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 1
+          },
+          {
+            "id": "mouthshut_blinkit-review-uttrnpqlonp",
+            "text": "Blinkit : no return or exchange on electronics I would like to bring to everyone's attention a concerning issue that I recently experienced with blinkit, an online retailer. I recently purchased an electronic ( Egg boiler ) item from blinkit, but unfortunately, it did not meet my expectations. When ",
+            "source": "product_reviews",
+            "url": "https://www.mouthshut.com/review/blinkit-review-uttrnpqlonp",
+            "rating": 1
+          },
+          {
+            "id": "reddit_1gffgj6",
+            "text": "Beware of quick commerce platforms for your veggies and fruits This is the 3rd incident that happened to me in the past 2 months, the chilli and lemon i ordered were literally molded with fungi. I usually buy my groceries from local vendors, but as i work in a night shift sometimes wake up late and ",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1gffgj6/beware_of_quick_commerce_platforms_for_your/",
+            "rating": null
+          },
+          {
+            "id": "appstore_12974985371",
+            "text": "Poor ethics. They cannot be trusted with refunds for flawed items, often send produce which are overly ripe or even rotten, and then decline to replace or refund. There are other 10 minutes options which are better. I recommend avoid.",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 1
+          }
+        ],
+        "source_diversity": 3
+      },
+      {
+        "statement": "Deep-rooted cultural and social preference for local/offline vendors — reinforced by family and community norms — acts as a non-product barrier to exploring new categories on quick-commerce apps, independent of price or convenience.",
+        "strength": "moderate",
+        "reasoning": "Several reddit threads show explicit family/social pressure against using Blinkit/Zepto even for routine categories like vegetables (mother crying, being 'sent out with a slap'), plus deliberate lifestyle choices to avoid quick-commerce for spending discipline or supporting local business, indicating the barrier is behavioral/cultural rather than purely functional.",
+        "supporting_quote_ids": [
+          "reddit_1igr2j4",
+          "reddit_m91jm4z",
+          "reddit_m9lm2t8",
+          "reddit_1gg7r52",
+          "reddit_m9osqkc"
+        ],
+        "example_quotes": [
+          {
+            "id": "reddit_1igr2j4",
+            "text": "My mom cried My mother is visiting me in Bangalore/Bangaluru (pls don't come at me) and despite my repeated requests, she insists to buy her veggies from local vendors instead of zepto/blinkit. I honestly don't think there is as much of a price difference but she thinks I'm getting fully scammed. An",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1igr2j4/my_mom_cried/",
+            "rating": null
+          },
+          {
+            "id": "reddit_m91jm4z",
+            "text": "Just today morning I went out to local vegetable shop to bring kottambari soppu and chicken fry masale, I tried to pitch zepto and Blinkit to my parents and I was sent out with a slap one fine day, so practically healthwise and what's good for society wise please visit your nearest Kirana or superma",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1i910bz/where_do_you_get_your_groceries_when_is_the_last/m91jm4z/",
+            "rating": null
+          },
+          {
+            "id": "reddit_m9lm2t8",
+            "text": "Don't spend on unnecessary things. No Zomato, Swiggy, Blinkit, Zepto. No to MG road, cafes, pubs, clubs. Get rid of subscriptions of OTT. I saved more than 10k just doing this.",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1ibvmta/how_do_you_guys_save_money_in_bengaluru_as/m9lm2t8/",
+            "rating": null
+          },
+          {
+            "id": "reddit_1gg7r52",
+            "text": "Am I the only one who hasn't used Zepto or Blinkit or any q commerce platforms? I saw the news of kirana stores failing etc. And yes, I know that grocery shopping is a pain. But, am I the only one who buys stuff offline? I haven't even installed these apps on my phone. Like the only app I have used ",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1gg7r52/am_i_the_only_one_who_hasnt_used_zepto_or_blinkit/",
+            "rating": null
+          },
+          {
+            "id": "reddit_m9osqkc",
+            "text": "No Zomato/Swiggy. Blinkit/zepto only when absolutely necessary. For Groceries checkout nearby market shops &amp; Dmart. There are offers everywhere; So don't buy something you don't absolutely need, jsit coz you might save something with that offer. No going out on weekends. Even if you go to malls,",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1ibvmta/how_do_you_guys_save_money_in_bengaluru_as/m9osqkc/",
+            "rating": null
+          }
+        ],
+        "source_diversity": 1
+      },
+      {
+        "statement": "Users show curiosity about novel categories (silver coins, printouts, ambulances, plants, fashion) but this exploration is often tentative and accompanied by uncertainty (e.g., asking if items are genuine or how to use them), suggesting a lack of trust/education signals rather than lack of interest as the barrier.",
+        "strength": "weak",
+        "reasoning": "Evidence is limited to a handful of one-off reddit posts with no clear pattern of resolution or repeat behavior, so while it hints at an uncertainty-driven barrier, the sample is too small and anecdotal to generalize confidently.",
+        "supporting_quote_ids": [
+          "reddit_1g7c6gm",
+          "reddit_1hy6odm",
+          "reddit_1gn2v37",
+          "reddit_1hscuzf",
+          "reddit_1i1qpm2"
+        ],
+        "example_quotes": [
+          {
+            "id": "reddit_1g7c6gm",
+            "text": "Silver coin from blinkit Can I buy silver coin from Blinkit? Would it be genuine?",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1g7c6gm/silver_coin_from_blinkit/",
+            "rating": null
+          },
+          {
+            "id": "reddit_1hy6odm",
+            "text": "Bought this ugaoo plant from blinkit, should I remove the sheet covering the soil or will it get dissolved? [this is the plastic looking sheet covering the soil ]([link]",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1hy6odm/bought_this_ugaoo_plant_from_blinkit_should_i/",
+            "rating": null
+          },
+          {
+            "id": "reddit_1gn2v37",
+            "text": "Blinkit saved me! Guys! Incase you are in Bangalore and you forget to bring your CV to any walk-in drive (blunder right!), just go for blinkit printout option. Anyways who asks for hardcopy of resume nowadays. But nevermind I am just glad we have this option.",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1gn2v37/blinkit_saved_me/",
+            "rating": null
+          },
+          {
+            "id": "reddit_1hscuzf",
+            "text": "Blinkit tests 'ambulance in 10 mins' service",
+            "source": "reddit",
+            "url": "https://reddit.com/r/IndianStreetBets/comments/1hscuzf/blinkit_tests_ambulance_in_10_mins_service/",
+            "rating": null
+          },
+          {
+            "id": "reddit_1i1qpm2",
+            "text": "GenZ of India, what do you think of 15 min delivery system like Dunzo/Blinkit but for Fashion instead.",
+            "source": "reddit",
+            "url": "https://reddit.com/r/india/comments/1i1qpm2/genz_of_india_what_do_you_think_of_15_min/",
+            "rating": null
+          }
+        ],
+        "source_diversity": 1
+      }
+    ],
+    "theme_names": [
+      "Competitor Comparison & Switching",
+      "New Category Exploration & Curiosity",
+      "Preference for Local & Offline Shopping",
+      "Regulatory & Compliance Barriers",
+      "Category Expansion Challenges",
+      "Skepticism Toward Quick-Commerce"
+    ]
+  },
+  {
+    "research_question": "How do users discover products today?",
+    "insights": [
+      {
+        "statement": "Users discover and evaluate products through active cross-platform comparison, checking multiple apps (Blinkit, Amazon, Flipkart, Zepto, Swiggy Instamart) for the same item to find availability, pricing, and value before purchase — indicating discovery is a multi-app search process rather than single-platform browsing.",
+        "strength": "moderate",
+        "reasoning": "6 distinct reddit threads show users actively naming and comparing 4-6 platforms simultaneously for the same product need (e.g., searching for a specific Kinder Joy edition across Blinkit/Amazon, or comparing Zepto vs Blinkit pricing), suggesting cross-platform checking is a common discovery behavior, though all evidence is from reddit only (no app_store corroboration) and sample size is small.",
+        "supporting_quote_ids": [
+          "reddit_1hjzbbv",
+          "reddit_1jisb73",
+          "reddit_maxi5vf",
+          "reddit_mgulfhb",
+          "reddit_miavhio",
+          "reddit_mrj986d"
+        ],
+        "example_quotes": [
+          {
+            "id": "reddit_1hjzbbv",
+            "text": "KinderJoy Harry Potter edition Folks - Quick help! I am looking for kinder joy set harry potter edition, any idea like local shop where can I get these? My girlfriend would be happiest person if I gift her those :P If it's available on blinkit, amazon, please let me know your pincode/area :') Help a",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1hjzbbv/kinderjoy_harry_potter_edition/",
+            "rating": null
+          },
+          {
+            "id": "reddit_1jisb73",
+            "text": "Where have all the gadgets gone? Flipkart &amp; Amazon’s shelves Look Empty!!! Is quick commerce eating their lunch? Over the past few months, I’ve noticed something strange, almost all of my wishlisted electronics on Flipkart and Amazon have either gone out of stock or now say “not deliverable to y",
+            "source": "reddit",
+            "url": "https://reddit.com/r/india/comments/1jisb73/where_have_all_the_gadgets_gone_flipkart_amazons/",
+            "rating": null
+          },
+          {
+            "id": "reddit_maxi5vf",
+            "text": "But still rely on services like Swiggy, Zomato, Dunzo, Blinkit, Zepto, Amazon, Flipkart?",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1ihjd7q/advice_for_staying_alive_in_bangalore/maxi5vf/",
+            "rating": null
+          },
+          {
+            "id": "reddit_mgulfhb",
+            "text": "Not just blinkit, I've faced this with zepto and instamart too. 8 out of 10 times items have less quantity. And even with food through zomato. 500g noodles weight 340g with container. In this case zomato doesn't even offer refund.",
+            "source": "reddit",
+            "url": "https://reddit.com/r/india/comments/1j76265/pls_check_your_blinkit_deliveries/mgulfhb/",
+            "rating": null
+          },
+          {
+            "id": "reddit_miavhio",
+            "text": "Ah, my apologies in that case. I've seen posts going around of how zepto charges ios users more so I assumed it's a similar post. I use zepto on my android phone and I get pretty decent/cheaper prices compared to blinkit so I honestly don't know why you're getting a different experience.",
+            "source": "reddit",
+            "url": "https://reddit.com/r/india/comments/1jdfyl6/isnt_this_unethical/miavhio/",
+            "rating": null
+          },
+          {
+            "id": "reddit_mrj986d",
+            "text": "Highly suggest to rationalize the cost difference from platform like Swiggy Zepto Blinkit over street side stores for fresh fruits and vegetables category as the differences are usually in the order of 60-120% and these start to add up quickly",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1kim997/monthly_groceries_cost_in_bangalore/mrj986d/",
+            "rating": null
+          }
+        ],
+        "source_diversity": 1
+      },
+      {
+        "statement": "Blinkit's broad product variety/range (across categories like household items, produce e.g. mango varieties) is a key driver that surfaces new products to users and is explicitly praised as a differentiator, encouraging discovery within the app rather than needing to look elsewhere.",
+        "strength": "moderate",
+        "reasoning": "4 quotes (3 from app_store 5-star reviews, 1 from reddit) consistently highlight 'wide variety,' 'incredible range,' and category-specific breadth (mango varieties) as a positive discovery-enabling feature, though the sample is small and mostly generic praise without deep behavioral detail.",
+        "supporting_quote_ids": [
+          "appstore_13212175306",
+          "appstore_13577407359",
+          "appstore_14011028272",
+          "reddit_1k2wjfn"
+        ],
+        "example_quotes": [
+          {
+            "id": "appstore_13212175306",
+            "text": "Variety household in a blink Except the wet paper bags fast all round delivery Cold items and paper bags do not blend",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          },
+          {
+            "id": "appstore_13577407359",
+            "text": "Wow!! India is ahead of its time with last mile warehousing. At home in 10-15 mins? Incredible range of things. Unbelievable.",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          },
+          {
+            "id": "appstore_14011028272",
+            "text": "Loving it !! They are always on time, wide variety of options to order. Makes life easy :)",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          },
+          {
+            "id": "reddit_1k2wjfn",
+            "text": "Varieties of Mangoes in India - Blinkit with its infomania!",
+            "source": "reddit",
+            "url": "https://reddit.com/r/india/comments/1k2wjfn/varieties_of_mangoes_in_india_blinkit_with_its/",
+            "rating": null
+          }
+        ],
+        "source_diversity": 2
+      },
+      {
+        "statement": "Product discovery/purchasing is still split between quick-commerce apps and traditional channels (kirana shops, supermarkets like Dmart, local vendors) for certain categories, with users maintaining hybrid routines rather than fully shifting discovery to apps like Blinkit.",
+        "strength": "weak",
+        "reasoning": "Only 3 reddit items touch on this, and they show mixed/anecdotal patterns (one user asks the community about habits, another lists a hybrid routine, another claims apps are mainly used by delivery agents) — evidence is thin, indirect, and somewhat contradictory, so confidence is low.",
+        "supporting_quote_ids": [
+          "reddit_1i910bz",
+          "reddit_m90tyd6",
+          "reddit_md11wgc"
+        ],
+        "example_quotes": [
+          {
+            "id": "reddit_1i910bz",
+            "text": "Where do you get your groceries? When is the last time you visited a Kirana or supermarket? Do you guys still go outside for groceries and other stuff or do you Blinkit/Zepto/Instamart/Flipkart minute everything? I live in a pretty decent part of Ulsoor Indiranagar and there’s nothing but a half emp",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1i910bz/where_do_you_get_your_groceries_when_is_the_last/",
+            "rating": null
+          },
+          {
+            "id": "reddit_m90tyd6",
+            "text": "- Dmart - every few days for bulk stuff - Walk to nearby supermarket for urgent stuff - Daily things like milk, eggs, bread, I get it while coming back from morning walk everyday - I go to *my chicken and more* every evening for nonveg. Get Samosa/kachori/vadapav/momos/donuts/puffs etc on the way ba",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1i910bz/where_do_you_get_your_groceries_when_is_the_last/m90tyd6/",
+            "rating": null
+          },
+          {
+            "id": "reddit_md11wgc",
+            "text": "Most are used by delivery agents. Especially Zepto, instamart, blinkit",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1iqkto5/yulu_and_similar_bikesdo_they_still_exist_in/md11wgc/",
+            "rating": null
+          }
+        ],
+        "source_diversity": 1
+      }
+    ],
+    "theme_names": [
+      "Cross-Platform Shopping Comparisons",
+      "Wide Product Variety & Selection",
+      "App Adoption vs Traditional Shopping"
+    ]
+  },
+  {
+    "research_question": "What role do habits play in shopping behavior?",
+    "insights": [
+      {
+        "statement": "Speed and convenience are the primary drivers converting one-off Blinkit purchases into repeat, habitual usage — users frame the app as a way to avoid stepping outside or visiting stores at all, which reduces the friction/decision cost of routine shopping.",
+        "strength": "strong",
+        "reasoning": "This is the most repeated pattern across 34 items from 4 sources (app_store, play_store, reddit, product_reviews), with multiple independent users (including NRIs and US-based reviewers) explicitly citing speed and 'not needing to step outside' as reasons for repeat use.",
+        "supporting_quote_ids": [
+          "appstore_13003132313",
+          "appstore_13298938116",
+          "appstore_13458494867",
+          "appstore_13152140930",
+          "appstore_13400407208"
+        ],
+        "example_quotes": [
+          {
+            "id": "appstore_13003132313",
+            "text": "Super fast service! I don’t need to step outside to shop!",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          },
+          {
+            "id": "appstore_13298938116",
+            "text": "Anything in the blink of an eye! What an awesome app and service! This is the fastest and easiest delivery app I have ever used. So easy, quick and simple and payment was a breeze too! I am SOOOOO grateful for Blinkit, it makes my busy life easier!!",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          },
+          {
+            "id": "appstore_13458494867",
+            "text": "Sita Umamaheswaran Blinkit has been a blessing in disguise! So convenient! Truly quick! Wonderful delivery personnel…polite and courteous. Enjoying the shopping !",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          },
+          {
+            "id": "appstore_13152140930",
+            "text": "Best app for Quick Commerce The best app till date I've used for quick commerce. As an NRI, I absolutely love to use this app whenever I visit India.",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          },
+          {
+            "id": "appstore_13400407208",
+            "text": "The best in India As a foreigner, India has a lot of inconveniences but Blinkit is the utter comfort service that literally delivers everything in a blink of second. Well maybe not, but close :)",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          }
+        ],
+        "source_diversity": 1
+      },
+      {
+        "statement": "For a subset of highly engaged users, Blinkit has moved beyond convenience into genuine behavioral dependency — some report near-daily use for years and describe difficulty imagining life without it, indicating habit formation strong enough to resemble routine/default behavior rather than deliberate choice.",
+        "strength": "moderate",
+        "reasoning": "Multiple distinct quotes (9 items across app_store, play_store, reddit) use language like 'can't live without it', 'addicted', 'hard to remember life before', and one user reports ordering 'almost everyday...for 3+ years', suggesting habitual/automatic behavior, but this is a smaller and more anecdotal sample than the broader convenience theme.",
+        "supporting_quote_ids": [
+          "appstore_13592373638",
+          "appstore_13808376085",
+          "appstore_12985740943",
+          "reddit_m84vr26",
+          "reddit_1gt6tkf"
+        ],
+        "example_quotes": [
+          {
+            "id": "appstore_13592373638",
+            "text": "Amazing service Can't live without it. Really appreciate the fact that a lot of people get employment through this.",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          },
+          {
+            "id": "appstore_13808376085",
+            "text": "Godsend It’s hard to remember how life was before Blinkit.",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          },
+          {
+            "id": "appstore_12985740943",
+            "text": "Owww Shocked for services as am from usa it came in 10 minutes i was so facinated and happy addicted now",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          },
+          {
+            "id": "reddit_m84vr26",
+            "text": "Almost everyday. Except for eggs, perhaps all other groceries are from Blinkit/Instamart/zepto for 3+ years now",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1i5lihz/how_many_times_are_you_using_quick_commerce/m84vr26/",
+            "rating": null
+          },
+          {
+            "id": "reddit_1gt6tkf",
+            "text": "Man I absolutely love living in a big city There are tons of delivery apps like BB, Blinkit, Zepto, and Instamart, and it's been months since I visited a store. They deliver things to our house faster than we can go to the store. I honestly love the comfort!",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1gt6tkf/man_i_absolutely_love_living_in_a_big_city/",
+            "rating": null
+          }
+        ],
+        "source_diversity": 2
+      },
+      {
+        "statement": "Habitual usage appears to create default/inertia effects beyond product choice — e.g., users note that once a tipping amount is set, apps retain it as a sticky default for future orders, showing how habitual interaction patterns get reinforced by app design rather than active reconsideration each time.",
+        "strength": "weak",
+        "reasoning": "Only a single reddit quote directly supports this specific mechanism; it's a distinct and interesting behavioral nuance but not corroborated elsewhere in the provided evidence, so confidence is limited.",
+        "supporting_quote_ids": [
+          "reddit_majgpjc"
+        ],
+        "example_quotes": [
+          {
+            "id": "reddit_majgpjc",
+            "text": "I have been using blinkit forever and not once they forced me to tip. What these apps in fact do is that once you have tipped, they will keep that option and amount selected for next time. You have to explicitly remove the tip next time",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1iftmlo/blinkit_mandatory_tip/majgpjc/",
+            "rating": null
+          }
+        ],
+        "source_diversity": 1
+      }
+    ],
+    "theme_names": [
+      "Speed and Convenience Drive Loyalty",
+      "Service Habit Dependency"
+    ]
+  },
+  {
+    "research_question": "What information do users need before trying a new category?",
+    "insights": [
+      {
+        "statement": "Before trying a new category (especially electronics/appliances), users want explicit upfront clarity on whether the item is returnable/exchangeable, since ambiguity or lack of disclosure at purchase time leads to distrust and abandoned repeat purchases after a bad experience.",
+        "strength": "moderate",
+        "reasoning": "Two independent complaints (app_store and product_reviews) specifically cite lack of return/exchange clarity on electronics as the trigger for frustration, and one app_store 5-star review explicitly asks for return policy to be 'elaborated' despite otherwise being satisfied, suggesting this is a real information gap rather than an isolated complaint.",
+        "supporting_quote_ids": [
+          "appstore_13916623600",
+          "mouthshut_blinkit-review-uttrnpqlonp",
+          "play_75bdb0f8-1fb3-4f42-a102-9a03d3ec2ad6"
+        ],
+        "example_quotes": [
+          {
+            "id": "appstore_13916623600",
+            "text": "Well managed on line business. Professionally well managed , very punctual and efficient. Only return policy of items have to be eloborated",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          },
+          {
+            "id": "mouthshut_blinkit-review-uttrnpqlonp",
+            "text": "Blinkit : no return or exchange on electronics I would like to bring to everyone's attention a concerning issue that I recently experienced with blinkit, an online retailer. I recently purchased an electronic ( Egg boiler ) item from blinkit, but unfortunately, it did not meet my expectations. When ",
+            "source": "product_reviews",
+            "url": "https://www.mouthshut.com/review/blinkit-review-uttrnpqlonp",
+            "rating": 1
+          },
+          {
+            "id": "play_75bdb0f8-1fb3-4f42-a102-9a03d3ec2ad6",
+            "text": "Absolute scam of a company. ordered a product got defective and they refused to honor return or refund under disguise of non returnable item. Pathetic",
+            "source": "play_store",
+            "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+            "rating": 1
+          }
+        ],
+        "source_diversity": 3
+      },
+      {
+        "statement": "Users need reassurance about defect/quality recourse (e.g., what happens if a product arrives damaged, defective, or near-expiry) before committing to a new category, as post-purchase denial of returns under 'non-returnable' labels is perceived as a trust-breaking bait-and-switch.",
+        "strength": "moderate",
+        "reasoning": "Multiple sources (play_store, app_store, reddit) independently raise concerns about what recourse exists after receiving a defective or near-expiry item, indicating this is a recurring pre-purchase anxiety rather than a one-off.",
+        "supporting_quote_ids": [
+          "play_75bdb0f8-1fb3-4f42-a102-9a03d3ec2ad6",
+          "appstore_12991286859",
+          "reddit_1f4lp44"
+        ],
+        "example_quotes": [
+          {
+            "id": "play_75bdb0f8-1fb3-4f42-a102-9a03d3ec2ad6",
+            "text": "Absolute scam of a company. ordered a product got defective and they refused to honor return or refund under disguise of non returnable item. Pathetic",
+            "source": "play_store",
+            "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+            "rating": 1
+          },
+          {
+            "id": "appstore_12991286859",
+            "text": "Very bad experience from the customer support This is ultra reckless response from your side this app is such a waste luring people’s money and not able to be responsible for the customer . If I took a product in any local and after purchasing if that doesn’t suit for me I can return . here the app ",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 1
+          },
+          {
+            "id": "reddit_1f4lp44",
+            "text": "Zepto/blinkit doubt If i order something in them and i receive a product near expiry then is there any solution for me?",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1f4lp44/zeptoblinkit_doubt/",
+            "rating": null
+          }
+        ],
+        "source_diversity": 3
+      },
+      {
+        "statement": "The evidence suggests category-specific return terms (e.g., electronics being non-returnable) are not well communicated at the point of purchase, but the sample size is small and skewed toward negative experiences, so the generalizability of this need across all new categories is uncertain.",
+        "strength": "weak",
+        "reasoning": "All 5 items relate to return policy pain points but come from a small, mostly 1-star sample; there is no direct evidence comparing categories beyond electronics, so broader claims about 'any new category' are inferred rather than directly observed.",
+        "supporting_quote_ids": [
+          "mouthshut_blinkit-review-uttrnpqlonp",
+          "appstore_12991286859"
+        ],
+        "example_quotes": [
+          {
+            "id": "mouthshut_blinkit-review-uttrnpqlonp",
+            "text": "Blinkit : no return or exchange on electronics I would like to bring to everyone's attention a concerning issue that I recently experienced with blinkit, an online retailer. I recently purchased an electronic ( Egg boiler ) item from blinkit, but unfortunately, it did not meet my expectations. When ",
+            "source": "product_reviews",
+            "url": "https://www.mouthshut.com/review/blinkit-review-uttrnpqlonp",
+            "rating": 1
+          },
+          {
+            "id": "appstore_12991286859",
+            "text": "Very bad experience from the customer support This is ultra reckless response from your side this app is such a waste luring people’s money and not able to be responsible for the customer . If I took a product in any local and after purchasing if that doesn’t suit for me I can return . here the app ",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 1
+          }
+        ],
+        "source_diversity": 2
+      }
+    ],
+    "theme_names": [
+      "Return Policy Frustrations"
+    ]
+  },
+  {
+    "research_question": "What frustrations emerge repeatedly?",
+    "insights": [
+      {
+        "statement": "Refund and dispute resolution is the most acute and systemic frustration: customers report being denied refunds/replacements even with clear evidence (rotten produce, wrong items, fake products), and payment failures (money debited, order not placed) frequently go unresolved due to inaccessible or scripted customer support.",
+        "strength": "strong",
+        "reasoning": "This pattern recurs across many distinct themes (Product Quality & Refund Issues, Refund Process Friction & Denials, Payment Processing Failures, Trust and Service Failures, Inaccessible Customer Support) totaling well over 100 items combined across all four sources (play_store, app_store, reddit, product_reviews), with highly consistent complaints of 'no refund', 'money deducted', 'no way to contact support', and support agents accusing customers of lying.",
+        "supporting_quote_ids": [
+          "appstore_12974985371",
+          "appstore_13165664251",
+          "appstore_13408440834",
+          "appstore_12982445760",
+          "appstore_13902353084",
+          "mouthshut_blinkit-review-llmttpqrrnp",
+          "appstore_13110243875",
+          "play_1f5b8196-60f3-411b-bcf1-d3621dc5b110"
+        ],
+        "example_quotes": [
+          {
+            "id": "appstore_12974985371",
+            "text": "Poor ethics. They cannot be trusted with refunds for flawed items, often send produce which are overly ripe or even rotten, and then decline to replace or refund. There are other 10 minutes options which are better. I recommend avoid.",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 1
+          },
+          {
+            "id": "appstore_13165664251",
+            "text": "Big Scam: Low quality product with hidden non refundable tags I ordered pickle ball paddles and the quality was shockingly poor. Paddle arrived with swollen uneven surface. Refund was rejected instead same poor quality replacement was offered which I already know is of bad quality. I know it’s an or",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 1
+          },
+          {
+            "id": "appstore_13408440834",
+            "text": "Wrong information on app I ordered blue gloves as shown on Blinkit, but when I opened the box I was surprised to see white gloves were sent. Blinkit did not acknowledge the mistake on the app and agree to a refund",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 1
+          },
+          {
+            "id": "appstore_12982445760",
+            "text": "Fraud company never refunded money and shows money refunded There is absolutely no way to reach out to anyone in case of issues, they have setup automated responses you can’t talk to any real person, my product was returned and they say it’s been refunded, over 7 working days now they promised 5 wor",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 1
+          },
+          {
+            "id": "appstore_13902353084",
+            "text": "Order failed. Payment deducted. No way to contact support Order failed. Payment deducted. No way to contact support",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 1
+          },
+          {
+            "id": "mouthshut_blinkit-review-llmttpqrrnp",
+            "text": "Blinkit Customer Support, Refunds - Scam and Fraud I am writing to express my extreme dissatisfaction with the service I have received from Blinkit(Order IDs: ORD496598762 and ORD543402266). I want to make it abundantly clear that this experience has been beyond frustrating and absolutely unacceptab",
+            "source": "product_reviews",
+            "url": "https://www.mouthshut.com/review/blinkit-review-llmttpqrrnp",
+            "rating": 1
+          },
+          {
+            "id": "appstore_13110243875",
+            "text": "Was called a liar in my first order, perfect Did not receive all the items in my order. When I complained, the support person claimed that the seller alleges that they have sent it and so I must be lying. How do I prove that I didn't receive it? Should I videotape myself opening every packet?",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 1
+          },
+          {
+            "id": "play_1f5b8196-60f3-411b-bcf1-d3621dc5b110",
+            "text": "I am trying to talk to customer executive but failed due to blinkit server issue, I have ordered something related to food and it is bad condition, I want replacement or refund but unable to register my complaint. Now Blinkit team, what is the solution now?",
+            "source": "play_store",
+            "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+            "rating": 1
+          }
+        ],
+        "source_diversity": 3
+      },
+      {
+        "statement": "Product integrity issues—especially rotten/wilted produce, underweight items, and counterfeit/fake goods (protein powder, eggs, whey)—are a recurring frustration that some users describe as a deliberate 'scam' at scale rather than isolated incidents.",
+        "strength": "strong",
+        "reasoning": "Multiple independent themes (Weight Accuracy Issues, Produce Quality Issues, Product Quality & Authenticity Issues, Health & Wellness Product Reliability) draw from reddit and app_store sources with repeated specific examples (grapes at 370g vs 500g advertised, beetroot half the stated weight, fake Optimum Nutrition protein powder, black/fake eggs, maggot-ridden zucchini), and users explicitly use words like 'scam' and describe it as recurring 'many times before.'",
+        "supporting_quote_ids": [
+          "reddit_1jborei",
+          "reddit_1jnfoag",
+          "reddit_mgwhk3v",
+          "reddit_1i9273q",
+          "mouthshut_blinkit-review-susromnmqnp",
+          "reddit_1kbddjp",
+          "reddit_mhd5xlr"
+        ],
+        "example_quotes": [
+          {
+            "id": "reddit_1jborei",
+            "text": "'A Thought-Out Way To Scam': Customer Slams Blinkit After Ordered Grapes Weigh Less Than Advertise",
+            "source": "reddit",
+            "url": "https://reddit.com/r/india/comments/1jborei/a_thoughtout_way_to_scam_customer_slams_blinkit/",
+            "rating": null
+          },
+          {
+            "id": "reddit_1jnfoag",
+            "text": "Blinkit \"Saga\" Continues. Ordered beetroot of 500 to 600 gms(2nd pic) as per the blinkit app along with other items. Actual weight of beetroot is literally half of it(1st pic) when delivered. Experienced this many, many times before especially with veg items. And no, there's no issue with the weighi",
+            "source": "reddit",
+            "url": "https://reddit.com/r/india/comments/1jnfoag/blinkit_saga_continues/",
+            "rating": null
+          },
+          {
+            "id": "reddit_mgwhk3v",
+            "text": "I do it with blinkit, food delivery apps too. Once i ordered blueberry 250 gram, it was 180 only. Complained and got refund. Same with food , ordered 1kg biryani but it was 920 gram only. Always check weight.",
+            "source": "reddit",
+            "url": "https://reddit.com/r/india/comments/1j76265/pls_check_your_blinkit_deliveries/mgwhk3v/",
+            "rating": null
+          },
+          {
+            "id": "reddit_1i9273q",
+            "text": "Beware of Fake Products on Blinkit – My Experience with Optimum Nutrition Protein Powder I recently ordered Optimum Nutrition protein powder from Blinkit, expecting the usual quality and authenticity. However, what I received was shocking – a fake product! The original packaging includes an authenti",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1i9273q/beware_of_fake_products_on_blinkit_my_experience/",
+            "rating": null
+          },
+          {
+            "id": "mouthshut_blinkit-review-susromnmqnp",
+            "text": "Blinkit delivering fake products I order eggs which are fake, they are completely black from inside, when I boiled them yellow part disappeared and no taste at all, same thing happening from last few orders , found no way to complain. At the same time sometimes use product after few days and got to ",
+            "source": "product_reviews",
+            "url": "https://www.mouthshut.com/review/blinkit-review-susromnmqnp",
+            "rating": 1
+          },
+          {
+            "id": "reddit_1kbddjp",
+            "text": "Got Maggot-Ridden Zucchini From Blinkit (Hulimavu Branch). Guys Please Be Careful. [Redirect for Twitter Post for Photos/Videos]([link]",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1kbddjp/got_maggotridden_zucchini_from_blinkit_hulimavu/",
+            "rating": null
+          },
+          {
+            "id": "reddit_mhd5xlr",
+            "text": "Faced the same issue multiple times. To people who are saying that 100g of grapes don't matter, think about 100g fruits/vegetables skimming per customer, this easily makes it a multi crore scam at blinkit scale Around 70% of all the items I have received till date were lesser than required quantity ",
+            "source": "reddit",
+            "url": "https://reddit.com/r/india/comments/1j76265/pls_check_your_blinkit_deliveries/mhd5xlr/",
+            "rating": null
+          }
+        ],
+        "source_diversity": 2
+      },
+      {
+        "statement": "Users perceive pricing as opaque and inflated relative to local markets/competitors, citing hidden delivery/handling fees, inconsistent charges between accounts/devices, and mandatory tips, which is fueling comparison-shopping behavior (e.g., third-party price-comparison tools).",
+        "strength": "moderate",
+        "reasoning": "Evidence spans Price Premium Concerns (33 items, mostly reddit) and Delivery Fee Clarity (13 items) themes with concrete price comparisons (coconut, vegetables 'double' local price) and reports of inconsistent delivery charges between two users on the same app, plus multiple mentions of apps built specifically to expose hidden fees—suggesting a broader but still somewhat anecdotal (reddit-heavy) pattern rather than universal complaint.",
+        "supporting_quote_ids": [
+          "reddit_1gr1k0v",
+          "reddit_1gn9l1r",
+          "reddit_1hhqpl9",
+          "reddit_1iftmlo",
+          "appstore_14100605024",
+          "reddit_1jy4d6d"
+        ],
+        "example_quotes": [
+          {
+            "id": "reddit_1gr1k0v",
+            "text": "Qcomm vs Madiwala Market price comparison. The price we pay for convenience is not so small. TL;DR: Qcomm is charging too much, sometimes double the price for essential vegetables when compared to local market. Like most of us I used to order everything on Blinkit. I was so used to the convenience Q",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1gr1k0v/qcomm_vs_madiwala_market_price_comparison_the/",
+            "rating": null
+          },
+          {
+            "id": "reddit_1gn9l1r",
+            "text": "Bengaluru vendor offers coconuts at a lower rate than Zepto and Blinkit, sparking a discussion about charges on grocery apps His board read- Coconut Price Zepto- 80/- Blinkit- 80/- Big Basket- 70/- Our Price- only 55/- :)",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1gn9l1r/bengaluru_vendor_offers_coconuts_at_a_lower_rate/",
+            "rating": null
+          },
+          {
+            "id": "reddit_1hhqpl9",
+            "text": "Blinkit delivery charges: Am I special, or is this for everyone? Blinkit is charging delivery fees every time—no free deliveries. However, I checked my roommate's Blinkit app, and it didn’t show any delivery charges on his phone. 30/- for delivery below 199 16/- for delivery above 199",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1hhqpl9/blinkit_delivery_charges_am_i_special_or_is_this/",
+            "rating": null
+          },
+          {
+            "id": "reddit_1iftmlo",
+            "text": "Blinkit mandatory tip Blinkit added mandatory tip to my bill as a tip to delivery partners,while i dont mind paying tip to delivery partners as they work really hard ,but why this feels like a day light robbery",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1iftmlo/blinkit_mandatory_tip/",
+            "rating": null
+          },
+          {
+            "id": "appstore_14100605024",
+            "text": "Hard to use Does not show order details easily tries to hide pricing information",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 3
+          },
+          {
+            "id": "reddit_1jy4d6d",
+            "text": "Feedback for an app that compares Blinkit, Instamart &amp; Zepto - accurate real-time prices, hidden fees and one-tap checkout?",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1jy4d6d/feedback_for_an_app_that_compares_blinkit/",
+            "rating": null
+          }
+        ],
+        "source_diversity": 2
+      }
+    ],
+    "theme_names": [
+      "Delivery Speed & Reliability",
+      "Customer Service Quality Issues",
+      "Product Quality & Refund Issues",
+      "Price Premium Concerns",
+      "Trust and Service Failures",
+      "Overall Satisfaction & Service Quality",
+      "Refund Process Friction & Denials",
+      "Payment Processing Failures",
+      "Delivery Fee Clarity",
+      "Weight Accuracy Issues",
+      "Off-Topic & Non-User Feedback",
+      "Packaging Quality & Waste Concerns",
+      "Product Availability and Stock Issues",
+      "Recurring Service Failures",
+      "Payment Method Barriers",
+      "Order Fulfillment Failures",
+      "Produce Quality Issues",
+      "Product Quality & Authenticity Issues",
+      "Delivery & Service Reliability",
+      "Operational & Process Friction",
+      "Order Accuracy & Quality Issues",
+      "Emergency & Last-Minute Utility",
+      "Trust and Service Experience",
+      "Health & Wellness Product Reliability",
+      "Delivery Fees & Logistics Barriers",
+      "Service Quality Impact on Retention",
+      "Inaccessible Customer Support",
+      "Trust and Fraud Concerns",
+      "Dark Patterns & Trust Concerns",
+      "Premium Product Cost Trade-off",
+      "Inventory Reliability Issues",
+      "Accessibility Barriers & Support Gaps",
+      "High Pricing Discontent"
+    ]
+  },
+  {
+    "research_question": "Which user segments are more likely to experiment?",
+    "insights": [
+      {
+        "statement": "The available evidence does not clearly identify specific user segments (e.g., by age, city, income, or usage frequency) that are more likely to experiment with or across multiple quick-commerce apps. Most quotes are generic single-line app reviews (praise or complaints) that don't reference comparison behavior or segment identity.",
+        "strength": "weak",
+        "reasoning": "Although the theme is labeled 'Multi-App Shopping Behavior' with 43 items sourced heavily from Reddit (34) and some app store reviews, the example quotes provided are short, generic app-store ratings (e.g., 'Good service and good app', 'Great App') that do not mention other apps, comparisons, or any demographic/behavioral segment. There is no explicit textual evidence linking any user type to experimentation behavior.",
+        "supporting_quote_ids": [
+          "appstore_13045815724",
+          "appstore_13121488754",
+          "appstore_13283336707",
+          "appstore_13553665207",
+          "appstore_13905878320"
+        ],
+        "example_quotes": [
+          {
+            "id": "appstore_13045815724",
+            "text": "Good service and good app Fast service and good iphone app.",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          },
+          {
+            "id": "appstore_13121488754",
+            "text": "nice apps and other fecaliths are unbelievable ❤️ ❤️❤️❤️❤️",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          },
+          {
+            "id": "appstore_13283336707",
+            "text": "Revolutionary The best indian app",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          },
+          {
+            "id": "appstore_13553665207",
+            "text": "Great App App in details",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          },
+          {
+            "id": "appstore_13905878320",
+            "text": "Well done ! Great experience with Blinkit—super fast delivery, easy-to-use app, and good product quality. Very reliable and convenient. Highly recomme",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          }
+        ],
+        "source_diversity": 1
+      },
+      {
+        "statement": "Negative experiences such as unexplained order cancellations may be a trigger for users to seek out or compare alternative apps, but this is only weakly inferable from a single complaint and not directly stated.",
+        "strength": "weak",
+        "reasoning": "Only one quote (appstore_14016787245) reflects a negative experience ('Cancelled the order without any reason'), which plausibly correlates with switching or comparing apps based on broader category knowledge of quick-commerce behavior, but the quote itself does not mention any other app or comparison activity, so this is speculative rather than directly evidenced.",
+        "supporting_quote_ids": [
+          "appstore_14016787245"
+        ],
+        "example_quotes": [
+          {
+            "id": "appstore_14016787245",
+            "text": "Cancellation Cancelled the order without any reason",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 1
+          }
+        ],
+        "source_diversity": 1
+      },
+      {
+        "statement": "Positive, satisfied users (rating=5, praising speed/UX/reliability) do not show evidence of active experimentation with other platforms in these quotes — satisfaction appears associated with single-app loyalty language rather than multi-app comparison.",
+        "strength": "weak",
+        "reasoning": "The five 5-star quotes emphasize satisfaction with Blinkit specifically (fast delivery, easy-to-use, reliable) without referencing other apps, suggesting these highly satisfied users are not the ones described as comparing platforms — but the sample is too small and non-comparative to confirm this as a segment-level pattern.",
+        "supporting_quote_ids": [
+          "appstore_13905878320",
+          "appstore_13045815724",
+          "appstore_13553665207",
+          "play_231049e3-c860-4c65-8502-144f75b28c93",
+          "play_9e286df3-85c2-4f1b-934e-c0647719360c"
+        ],
+        "example_quotes": [
+          {
+            "id": "appstore_13905878320",
+            "text": "Well done ! Great experience with Blinkit—super fast delivery, easy-to-use app, and good product quality. Very reliable and convenient. Highly recomme",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          },
+          {
+            "id": "appstore_13045815724",
+            "text": "Good service and good app Fast service and good iphone app.",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          },
+          {
+            "id": "appstore_13553665207",
+            "text": "Great App App in details",
+            "source": "app_store",
+            "url": "https://apps.apple.com/us/app/id960335206",
+            "rating": 5
+          },
+          {
+            "id": "play_231049e3-c860-4c65-8502-144f75b28c93",
+            "text": "this app is very nice and also soo useful",
+            "source": "play_store",
+            "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+            "rating": 5
+          },
+          {
+            "id": "play_9e286df3-85c2-4f1b-934e-c0647719360c",
+            "text": "very good working 👍😃 I am so happy for this work 😊😁",
+            "source": "play_store",
+            "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+            "rating": 5
+          }
+        ],
+        "source_diversity": 2
+      }
+    ],
+    "theme_names": [
+      "Multi-App Shopping Behavior"
+    ]
+  },
+  {
+    "research_question": "What unmet needs emerge consistently across discussions?",
+    "insights": [
+      {
+        "statement": "Investors and market observers consistently express a need for clearer, more timely financial transparency and disclosure around Blinkit's performance and its integration with Zomato/Eternal, rather than needing new product features. This is an unmet informational/governance need, not a consumer-facing one.",
+        "strength": "moderate",
+        "reasoning": "Multiple distinct posts (profitability debates, SEBI disclosure accusations, buy/sell/hold uncertainty, rebranding confusion) reflect recurring investor uncertainty about Blinkit's true financial standing and corporate structure, suggesting a consistent gap in transparent reporting rather than isolated complaints.",
+        "supporting_quote_ids": [
+          "reddit_10xxwm2",
+          "reddit_131nyi3",
+          "reddit_vqwxqu",
+          "reddit_vmgdng",
+          "reddit_vrwe9r",
+          "reddit_1ij2z4u",
+          "reddit_1jv469t"
+        ],
+        "example_quotes": [
+          {
+            "id": "reddit_10xxwm2",
+            "text": "Zomato bumper profits in food deliver?! And 75% YoY revenue growth! Holy shit! Zomato has just declared a bumper profit in it's food delivery business, the only loss is from its Blinkit aquisition costs, and has even declared a 75% revenue increase! What the actual fuck! You think we're going to see",
+            "source": "reddit",
+            "url": "https://reddit.com/r/IndianStreetBets/comments/10xxwm2/zomato_bumper_profits_in_food_deliver_and_75_yoy/",
+            "rating": null
+          },
+          {
+            "id": "reddit_131nyi3",
+            "text": "Zomato had a good run. I know there is a general disdain in the sub for such stocks. There were reports of bulk trade happening in the space. Blinkit is still a sword hanging high over zomato head.",
+            "source": "reddit",
+            "url": "https://reddit.com/r/IndianStreetBets/comments/131nyi3/zomato_had_a_good_run/",
+            "rating": null
+          },
+          {
+            "id": "reddit_vqwxqu",
+            "text": "Investors Accuse Zomato For Late Blinkit Disclosure To SEBI - Share Price India News",
+            "source": "reddit",
+            "url": "https://reddit.com/r/IndianStreetBets/comments/vqwxqu/investors_accuse_zomato_for_late_blinkit/",
+            "rating": null
+          },
+          {
+            "id": "reddit_vmgdng",
+            "text": "Zomato Acquires Blinkit In A Share Swap Deal; What Should Investors Do? Buy, Sell or Hold?",
+            "source": "reddit",
+            "url": "https://reddit.com/r/IndianStreetBets/comments/vmgdng/zomato_acquires_blinkit_in_a_share_swap_deal_what/",
+            "rating": null
+          },
+          {
+            "id": "reddit_vrwe9r",
+            "text": "Zomato's announcement to acquire Blinkit - Is It Profitable For The Investors? On June 24, Zomato announced the acquisition of Blinkit at 44.47 billion. Now the most important question that arises is that is it going to be a worthwhile investment for the investors or is it nothing less than an unpro",
+            "source": "reddit",
+            "url": "https://reddit.com/r/IndianStreetBets/comments/vrwe9r/zomatos_announcement_to_acquire_blinkit_is_it/",
+            "rating": null
+          },
+          {
+            "id": "reddit_1ij2z4u",
+            "text": "Zomato to change parent company name to Eternal; will house Blinkit, others",
+            "source": "reddit",
+            "url": "https://reddit.com/r/india/comments/1ij2z4u/zomato_to_change_parent_company_name_to_eternal/",
+            "rating": null
+          },
+          {
+            "id": "reddit_1jv469t",
+            "text": "Eternal Share Price: Zomato Rebrands on NSE and BSE from April 9 Zomato has officially rebranded to Eternal Limited, with its stock ticker changing from ZOMATO to ETERNAL on both NSE and BSE as of April 9, 2025. This strategic move reflects the company's diversification into sectors beyond food deli",
+            "source": "reddit",
+            "url": "https://reddit.com/r/IndianStreetBets/comments/1jv469t/eternal_share_price_zomato_rebrands_on_nse_and/",
+            "rating": null
+          }
+        ],
+        "source_diversity": 1
+      },
+      {
+        "statement": "There is a recurring skepticism about the sustainability of Blinkit's discount-heavy, loss-making business model, with users questioning whether its economics (cash burn, reliance on gig delivery infrastructure) can scale profitably without continued external subsidy — indicating an unmet need for a demonstrably sustainable unit-economics model.",
+        "strength": "moderate",
+        "reasoning": "Several independent threads raise similar concerns (burning investor money, unaffordable discounts, dependency on gig-economy bike delivery as the core 'innovation') across different discussion contexts, suggesting this is a consistent theme rather than a one-off complaint, though it remains speculative/opinion-based rather than quantified.",
+        "supporting_quote_ids": [
+          "reddit_mjd3h01",
+          "reddit_mjjlz9w",
+          "reddit_1j4oeiv",
+          "reddit_131nyi3"
+        ],
+        "example_quotes": [
+          {
+            "id": "reddit_mjd3h01",
+            "text": "Blinkit is losing money. Why not offer everything at a 50% discount? That would be an advantage too. They can’t do it because they are burning investor money. Amazon and flipkart will exist for years to come. If blinkit keeps offering unaffordable discounts they will run out of money eventually",
+            "source": "reddit",
+            "url": "https://reddit.com/r/india/comments/1jhvbqg/amazon_introduces_nonrefundable_49_processing_fee/mjd3h01/",
+            "rating": null
+          },
+          {
+            "id": "reddit_mjjlz9w",
+            "text": "If you think of it the only revolutionising thing about the aforementioned tech startups is motorcycle which enable Swiggy, Instamart, blinkit, zepto, zomato, rapido to continue with their business model. Heck even ola and uber have bike options!",
+            "source": "reddit",
+            "url": "https://reddit.com/r/india/comments/1jj01u0/the_indian_startup_ecosystem_is_solely_based_on/mjjlz9w/",
+            "rating": null
+          },
+          {
+            "id": "reddit_1j4oeiv",
+            "text": "EV rentals for gigs, students and professionals. So the basic idea is rent EVs to people who work for fast commerce and logistics, like for the people delivering food and groceries with zomato, zepto blinkit Swiggy etc they can rent a bike rather than owning one this will be two wheeler EVs next wil",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1j4oeiv/ev_rentals_for_gigs_students_and_professionals/",
+            "rating": null
+          },
+          {
+            "id": "reddit_131nyi3",
+            "text": "Zomato had a good run. I know there is a general disdain in the sub for such stocks. There were reports of bulk trade happening in the space. Blinkit is still a sword hanging high over zomato head.",
+            "source": "reddit",
+            "url": "https://reddit.com/r/IndianStreetBets/comments/131nyi3/zomato_had_a_good_run/",
+            "rating": null
+          }
+        ],
+        "source_diversity": 1
+      },
+      {
+        "statement": "Users highlight an unmet need around the ethical/legal use of public infrastructure (roads, footpaths) and its blurring with private business expansion, suggesting community concern about accountability when quick-commerce firms leverage or encroach on public assets for last-mile logistics.",
+        "strength": "weak",
+        "reasoning": "Only a few scattered comments touch this (leasing footpaths, comparisons to public infrastructure like hospitals/railways, road infrastructure gaps), and the sample size is small (4 items) with mixed relevance, so confidence is limited despite thematic consistency.",
+        "supporting_quote_ids": [
+          "reddit_1k0rr73",
+          "reddit_mb2psf5",
+          "reddit_mcp169m"
+        ],
+        "example_quotes": [
+          {
+            "id": "reddit_1k0rr73",
+            "text": "Blinkit leased the public road and footpath in my neighborhood.",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1k0rr73/blinkit_leased_the_public_road_and_footpath_in_my/",
+            "rating": null
+          },
+          {
+            "id": "reddit_mb2psf5",
+            "text": "Tomorrow you will say the same about hospital, ambulance services (we already saw Blinkit rising to this opportunity), supposed public infrastructure, railways and what not.",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1ii1wse/bangalores_rising_school_fee_every_year/mb2psf5/",
+            "rating": null
+          },
+          {
+            "id": "reddit_mcp169m",
+            "text": "Road infrastructure is the most important infrastructure in India. I don’t want to travel everywhere by public transport because there is 0 last mile connectivity. There is no planned trunk routes and city centers. These are not things money can solve Roads transport not only people but all sorts of",
+            "source": "reddit",
+            "url": "https://reddit.com/r/bangalore/comments/1ip4erq/will_invest_1lcr_to_ease_traffic_woes_shivakumar/mcp169m/",
+            "rating": null
+          }
+        ],
+        "source_diversity": 1
+      }
+    ],
+    "theme_names": [
+      "Investor Sentiment & Market Concerns",
+      "Business Model Sustainability & Scrutiny",
+      "Corporate Structure & Strategy",
+      "Infrastructure as Business Enabler",
+      "Corporate & Business News"
+    ]
+  }
+]
