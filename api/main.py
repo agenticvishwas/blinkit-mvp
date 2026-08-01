@@ -34,6 +34,15 @@ app.add_middleware(
 )
 
 
+@app.get("/")
+def root():
+    # This is an API-only service with no page to render at "/" -- exists so a
+    # bare hit to the deployed URL (a health-check probe, or a browser visiting
+    # the Render URL directly) gets a 200 instead of a 404. Real health checks
+    # should still point at /api/health.
+    return {"service": "occasion-concierge-api", "docs": "/docs", "health": "/api/health"}
+
+
 @app.get("/api/health")
 def health():
     return {"status": "ok"}

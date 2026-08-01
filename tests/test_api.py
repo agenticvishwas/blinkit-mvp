@@ -94,6 +94,15 @@ def test_health_endpoint():
     assert resp.json() == {"status": "ok"}
 
 
+def test_root_returns_200_not_404():
+    """Regression test: Render's default health probe (and anyone hitting the
+    bare deployed URL) requests "/" -- there was no route for it, so it 404'd.
+    Real health checks should still target /api/health (see render.yaml's
+    healthCheckPath), but "/" itself must not 404."""
+    resp = _client().get("/")
+    assert resp.status_code == 200
+
+
 def test_cors_rejects_unlisted_origin():
     resp = _client().options(
         "/api/converse",
